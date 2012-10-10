@@ -1,31 +1,31 @@
-Ceci est le répertoire futur du projet Transport Montréal pour Android et BB10.
+ï»¿Ceci est le rÃ©pertoire futur du projet Transport MontrÃ©al pour Android et BB10.
 https://play.google.com/store/apps/details?id=net.rhatec.amtmobile
 
 Description
-TransportMTL vous permet d'accéder facilement dans un mode hors-ligne à l'horaire des sociétés de transport montréalaises (STL, STM, RTL, AMT, CRT, MRC et Métro). 
-Trouver facilement vos départs en effectuant une recherche ou bien en parcourant les horaires. Ajouter à vos favoris les arrêts qui vous intéressent pour une consultation rapide. 
-Vous pouvez également consulter les cartes du Métro de Montréal et des trains de l'AMT.
-Liste des sociétés de transport et Acronymes:
-STL Société de Transport de Laval
-STM Société de Transport de Montréal
-RTL Réseau de Transport de Longueuil
-AMT Agence Métropolitaine de Transport
+TransportMTL vous permet d'accÃ©der facilement dans un mode hors-ligne Ã  l'horaire des sociÃ©tÃ©s de transport montrÃ©alaises (STL, STM, RTL, AMT, CRT, MRC et MÃ©tro). 
+Trouver facilement vos dÃ©parts en effectuant une recherche ou bien en parcourant les horaires. Ajouter Ã  vos favoris les arrÃªts qui vous intÃ©ressent pour une consultation rapide. 
+Vous pouvez Ã©galement consulter les cartes du MÃ©tro de MontrÃ©al et des trains de l'AMT.
+Liste des sociÃ©tÃ©s de transport et Acronymes:
+STL SociÃ©tÃ© de Transport de Laval
+STM SociÃ©tÃ© de Transport de MontrÃ©al
+RTL RÃ©seau de Transport de Longueuil
+AMT Agence MÃ©tropolitaine de Transport
 AMTBUS Autobus Express de l'AMT (la 90 Express Chevrier)
 CITCRC CIT Chambly-Richelieu-Carignan
 CITHSL CIT du Haut-Saint-Laurent
 CITLA CIT Laurentides
 CITLR CIT le Richelain
-CITPI CIT La Presqu'île
+CITPI CIT La Presqu'Ã®le
 CITROUS CIT Roussillon
-CITVR CIT Vallée du Richelieu
-CRTL CRT Lanaudière
+CITVR CIT VallÃ©e du Richelieu
+CRTL CRT LanaudiÃ¨re
 MRC2M OKA Express
 MRCLASSO MRC L'Assomption
 MRCLM MRC les Moulins
 OMITSJU Ville de Sainte-Julie
 
 ===========================================================================
-This is the future repository for Transport Montréal on Android and BB10.
+This is the future repository for Transport MontrÃ©al on Android and BB10.
 https://play.google.com/store/apps/details?id=net.rhatec.amtmobile
 
 TransportMTL allow users to easily access public transportation schedule for Montreal. All schedules are available offline. You can browse, search and bookmark any departure 
@@ -34,19 +34,19 @@ We also have maps for the metro and the trains.
 
 
 Full transport service list:
-STL Société de Transport de Laval
-STM Société de Transport de Montréal
-RTL Réseau de Transport de Longueuil
-AMT Agence Métropolitaine de Transport
+STL SociÃ©tÃ© de Transport de Laval
+STM SociÃ©tÃ© de Transport de MontrÃ©al
+RTL RÃ©seau de Transport de Longueuil
+AMT Agence MÃ©tropolitaine de Transport
 AMTBUS Autobus Express de l'AMT (90 Express Chevrier)
 CITCRC CIT Chambly-Richelieu-Carignan 
 CITHSL CIT du Haut-Saint-Laurent
 CITLA CIT Laurentides
 CITLR CIT le Richelain
-CITPI CIT La Presqu'île
+CITPI CIT La Presqu'Ã®le
 CITROUS CIT Roussillon
-CITVR CIT Vallée du Richelieu
-CRTL CRT Lanaudière
+CITVR CIT VallÃ©e du Richelieu
+CRTL CRT LanaudiÃ¨re
 MRC2M OKA Express
 MRCLASSO MRC L'Assomption
 MRCLM MRC les Moulins
