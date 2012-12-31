@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory  android:title="Connexions">
+<ListPreference
+android:title="Type de connexion"
+android:summary="Sélectionner le type de connexions à utiliser"
+android:key="conType"
+android:defaultValue="all-connect"
+android:entries="@array/connexionString"
+android:entryValues="@array/connexionValue" />
+</PreferenceCategory>
+
+<PreferenceCategory  android:title="Maintenance">
+<Preference android:summary="Supprime tous les favoris" android:title="Effacer les favoris" android:key="effFavoris"></Preference>
+<Preference android:summary="Supprimer certaines base de données" android:title="Supprimer base de donnée"  android:key="resetDba"></Preference>
+<Preference android:summary="Supprime tous les favoris et les bases de données" android:title="Remise à zéro" android:key="resetAll"></Preference>
+<CheckBoxPreference
+android:title="Avertissement"
+android:defaultValue="true"
+android:summary="Avertissement si la base de donnée ne semble pas à jour."
+android:key="warningValidity" /> 
+</PreferenceCategory>
+<PreferenceCategory  android:title="Personnalisation">
+<ListPreference
+android:title="Page de démarrage"
+android:summary="Sélectionner votre page de démarrage"
+android:key="startPage"
+android:defaultValue="select-transport"
+android:entries="@array/homepageString"
+android:entryValues="@array/homepageValue" />
+</PreferenceCategory>
+<PreferenceCategory  android:title="Autre">
+<Preference android:summary="Information utile à propos de l\'application." android:title="Manuel de l\'utilisateur" android:key="userguide"></Preference>
+<Preference android:summary="À propos de Rhatec" android:title="À propos" android:key="aPropos"></Preference>
+</PreferenceCategory>
+</PreferenceScreen>

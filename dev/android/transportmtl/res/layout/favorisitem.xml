@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    >
+
+
+    <TableLayout
+        android:id="@+id/TableLayout01"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_weight="2">
+
+		<TableRow
+            android:id="@+id/TableRow02"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/NoArretListTxt"
+                style="@style/FavorisItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_weight="0"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:text="49000"
+                
+                android:textSize="18sp"
+                android:width="70dp" >
+            </TextView>
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/IntersectionTxt"
+                style="@style/FavorisItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4sp"
+                android:layout_weight="5"
+                android:gravity="left"
+                
+                android:paddingRight="4sp"
+                android:text="Intersection1/WALALALLALAALIntersection2"
+                android:textSize="18sp" >
+
+            </TextView>
+
+        </TableRow>
+		
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/AutobusTxt"
+                style="@style/FavorisItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:text="903 Nord:"
+                android:textSize="14sp"
+                android:width="85dp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/ExtraInfo"
+                style="@style/FavorisItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="left"
+                android:paddingLeft="4sp"
+                android:paddingRight="10px"
+                android:text="ExtraInfo"
+                android:textSize="18sp" >
+            </TextView>
+        </TableRow>
+
+        
+
+        <TableRow
+            android:id="@+id/TableRow04"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/reseauTransport"
+                style="@style/FavorisItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="5"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:text="STM" >
+            </TextView>
+
+
+
+            <TextView
+                android:id="@+id/ProchainPassageTxt"
+                style="@style/FavorisItem"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4sp"
+                android:text="" >
+
+            </TextView>
+
+        </TableRow>
+    </TableLayout>
+
+
+
+<CheckBox
+    android:id="@+id/checkBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,1 @@
+omitsju;Ville de Sainte-Julie;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/omitsju/google_transit.zip;stop_id;use-color

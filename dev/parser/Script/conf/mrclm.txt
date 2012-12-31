@@ -1,0 +1,1 @@
+mrclm;Urbis (MRC les Moulins);AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/mrclm/google_transit.zip;stop_id;use-color

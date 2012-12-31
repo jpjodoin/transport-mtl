@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Html">
+      <UniqueIdentifier>{af84307b-af8b-4920-87c1-a8dca76e2aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{0220b7a1-9f30-4940-b01e-9e6db0af2e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logging">
+      <UniqueIdentifier>{f15dd22b-fc3e-4a69-b072-9cf4728620e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encoding">
+      <UniqueIdentifier>{3ebb85d6-623a-4d0f-85d4-a62b94f66e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{83a969ea-f02c-4487-bd9c-58a1b157fc67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{aaa22f71-4277-4d59-897f-9a2dac064a0f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CelluleTableau.cpp">
+      <Filter>Html</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTMLHelpers.cpp">
+      <Filter>Html</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Page.cpp">
+      <Filter>Html</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tableau.cpp">
+      <Filter>Html</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringHelpers.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LogHelpers.cpp">
+      <Filter>Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Base64Helpers.cpp">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MD5Helpers.cpp">
+      <Filter>Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FichierHelpers.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DateHelpers.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimeHelpers.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CelluleTableau.h">
+      <Filter>Html</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DataArray2D.h">
+      <Filter>Html</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HTMLHelpers.h">
+      <Filter>Html</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Page.h">
+      <Filter>Html</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Tableau.h">
+      <Filter>Html</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StringHelpers.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LogHelpers.h">
+      <Filter>Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Base64Helpers.h">
+      <Filter>Encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MD5Helpers.h">
+      <Filter>Encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FichierHelpers.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DateHelpers.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TimeHelpers.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

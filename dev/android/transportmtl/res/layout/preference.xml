@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"><LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@+id/RelativeLayout01" android:id="@+id/LigneTitle"><TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:textSize="20px" android:id="@+id/preferenceTitle" android:text="@string/preference_title"></TextView>
+
+</LinearLayout>
+<ListView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/listeItemPreference" android:drawSelectorOnTop="false" android:layout_below="@+id/LigneTitle"></ListView>
+</RelativeLayout>

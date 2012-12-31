@@ -1,0 +1,235 @@
+*
+{
+	margin:0;
+}
+html
+{
+	background: white;
+	background-image: url(Images/background.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+
+body
+{
+	color: black;
+	font: 80%/110% Verdana, Helvetica, sans-serif;
+	background-image: url(Images/cloud.png);
+	background-position: top center; 
+	background-repeat: no-repeat;
+}
+
+p
+{
+	text-align: justify;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+a
+{
+	color: black;
+	text-align: left;
+}
+a:hover
+{
+	background: #FFBC00
+}
+li 
+{ 
+	  list-style-type:none; 
+} 
+img
+{
+	border: 0px;
+}
+/*********************************************
+
+		Header block
+
+**********************************************/
+#header
+{
+	background-position: left top;
+	background-repeat: repeat-x;
+	background-image: url(Images/menu.png);
+}
+/*********************************************
+
+		Layout
+
+**********************************************/
+
+#wrap
+{
+	position:relative;		/*Permet de centré*/
+	width: 1000px;			/*Wrap a 1000px*/
+	margin: 0 auto;
+	background: white;
+}
+	#main
+	{
+		float: left;		/* Pour avoir le teléphone a droite*/
+		width: 700px;
+		background: white;
+	}
+	#menubar, #menu, #language
+	{
+		background-position: left top;
+		background-repeat: repeat-x;
+		background-image: url(Images/menu.png);
+		line-height: 30px;
+		height: 30px;
+	}
+	#language
+	{
+		text-align: right;
+		padding-right: 50px;
+	}
+	#menu
+	{
+		width: 835px;
+		color: #FFBC00;
+		font-size: 16px;
+		font-variant: small-caps;
+		text-align: left;
+		float: left;
+	}
+	#menu a
+	{ 
+		color: white;
+		text-decoration: none; 
+	}
+	#pict
+	{
+		margin-top: 10px;
+	}
+/*********************************************
+
+		Page block
+
+**********************************************/
+#fade
+{
+	position:absolute;
+	left:684px;
+	top:327px;
+	display:none;
+}
+/* ----------- My Form ----------- */
+.myform
+{
+	margin: 10px;
+	width:650px;
+	padding:14px;
+	min-height: 470px;
+	margin-bottom: 10px;
+	text-align:left;
+	overflow:auto;
+}
+
+/* ----------- stylized ----------- */
+#stylized
+{
+	border:solid 2px #b7ddf2;
+	background:#ebf4fb;
+}
+#stylized h1 
+{
+	font-size:14px;
+	font-weight:bold;
+	margin-top: 10px;
+	margin-bottom:5px;
+	text-align: left;
+}
+#stylized p
+{
+	font-size:13px;
+	margin-bottom:20px;
+	border-bottom:solid 1px #b7ddf2;
+	padding-bottom:10px;
+}
+#stylized label
+{
+	vertical-align: middle;
+	float:left;
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:200px;
+}
+#stylized .small
+{
+	color:#666666;
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	width:200px;
+
+}
+#stylized .faqanswer
+{
+	display:block;
+	font-size:11px;
+	font-weight:normal;
+	text-align: justify;
+	padding-top:5px;
+}
+#stylized .space
+{
+	margin-bottom:10px;
+}
+#stylized input, #stylized textarea
+{
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:300px;
+	margin:2px 0 20px 10px;
+}
+#stylized select
+{
+	font-size:12px;
+	padding:4px 2px;
+	border:solid 1px #aacfe4;
+	width:305px;
+	margin:2px 0 20px 10px;
+}
+#stylized textarea
+{
+	height: 150px;
+}
+#stylized button
+{
+	clear:both;
+	margin-left:150px;
+	width:125px;
+	height:31px;
+	text-align:center;
+	line-height:31px;
+	color: black;
+	font-size:11px;
+	font-weight:bold;
+}
+#stylized .nametop
+{
+	vertical-align: top;
+}
+
+/*********************************************
+
+		Footer block
+
+**********************************************/
+#footer
+{
+	text-align: center;
+	clear: both;
+	line-height: 30px;
+	height: 30px;
+	width: 1000px;
+	color: white;
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	background-image: url(Images/footer.png);
+}

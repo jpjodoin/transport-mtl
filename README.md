@@ -2,7 +2,8 @@
 
 ## Version française
 
-Ceci est le répertoire futur du projet Transport Montréal pour Android et BB10.
+Ceci est le répertoire du projet Transport Montréal pour Android et BB10. La documentation est très incomplète pour l'instant, il y a toutefois des fichiers Readme dans tous les dossier afin de vous aidez à partir. Si vous avez des questions
+ou que vous êtes interessé d'améliorer une partie particulière de Transport Montréal, veuillez m'en informer et je m'arrangerai pour documenter cette partie en priorité et je vous donnerai un coup de main.
 https://play.google.com/store/apps/details?id=net.rhatec.amtmobile
 
 Description
@@ -34,7 +35,8 @@ Liste des sociétés de transport et Acronymes:
 ===========================================================================
 
 
-This is the future repository for Transport Montréal on Android and BB10.
+This is the repository for Transport Montréal on Android and BB10. Documentation is incomplete at the moment, but there are Readme file in every folders that should help understand the basic structure. If you are interested in 
+improving Transport Montréal, please contact me and mention what you want to work on and I'll document more that part/help you.
 https://play.google.com/store/apps/details?id=net.rhatec.amtmobile
 
 TransportMTL allow users to easily access public transportation schedule for Montreal.

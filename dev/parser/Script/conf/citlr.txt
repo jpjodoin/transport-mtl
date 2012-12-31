@@ -1,0 +1,1 @@
+citlr;CIT le Richelain;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/citlr/google_transit.zip;stop_id;use-color

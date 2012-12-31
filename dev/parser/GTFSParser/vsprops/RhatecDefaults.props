@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir>\bin\$(Configuration)\</OutDir>
+    <IntDir>\bin\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Bscmake>
+      <OutputFile>.\bin\$(Configuration)\$(ProjectName).bsc</OutputFile>
+    </Bscmake>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>.\bin\$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>.\bin\$(Configuration)\vc90.pdb</ProgramDataBaseFileName>
+      <XMLDocumentationFileName>.\bin\$(Configuration)\</XMLDocumentationFileName>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Link>
+      <OutputFile>.\bin\$(Configuration)\$(ProjectName).dll</OutputFile>
+      <ManifestFile>.\bin\$(Configuration)\$(TargetFileName).intermediate.manifest</ManifestFile>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+    </Link>
+    <ResourceCompile>
+      <ResourceOutputFileName>.\bin\$(Configuration)\%(Filename).res</ResourceOutputFileName>
+    </ResourceCompile>
+    <Manifest>
+      <OutputManifestFile>.\bin\$(Configuration)\$(TargetFileName).embed.manifest</OutputManifestFile>
+    </Manifest>
+    <ManifestResourceCompile>
+      <ResourceOutputFileName>.\bin\$(Configuration)\$(TargetFileName).embed.manifest.res</ResourceOutputFileName>
+    </ManifestResourceCompile>
+    <Xdcmake>
+      <OutputFile>.\bin\$(Configuration)\$(TargetName).xml</OutputFile>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <PropertyGroup Label="Configuration">
+    <BuildLogFile>.\bin\$(Configuration)\BuildLog.htm</BuildLogFile>
+  </PropertyGroup>
+</Project>

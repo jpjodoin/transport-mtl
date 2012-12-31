@@ -1,0 +1,1 @@
+amt;Agence métropolitaine de transport;TRAIN;display-map;nodisplay-search;UrlGetter;http://www.amt.qc.ca/xdata/trains/google_transit.zip;stop_id;use-color

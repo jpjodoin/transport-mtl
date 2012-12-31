@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_Titre"
+        android:layout_width="fill_parent"
+        android:layout_height="43sp"
+        android:layout_above="@+id/RelativeLayout01"
+        android:background="#6495ed"
+        android:gravity="center_vertical|right"
+        android:weightSum="4" >
+
+        <TextView
+            android:id="@+id/FavorisTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/favoris_title"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" >
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/btn_modifier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:src="@drawable/ic_menu_info_details" />
+
+
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/LinearLayout_Titre"
+        android:dividerHeight="3dip"
+        android:drawSelectorOnTop="false" >
+
+    </ExpandableListView>
+
+</RelativeLayout>

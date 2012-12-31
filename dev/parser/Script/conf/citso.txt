@@ -1,0 +1,1 @@
+citso;CIT du Sud-Ouest;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/citso/google_transit.zip;stop_id;use-color

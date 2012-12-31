@@ -1,0 +1,210 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout01"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:id="@+id/informationNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TitreNotification"
+            android:layout_margin="2px"
+            android:stretchColumns="true" >
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/notifier_ReseauTransportTxt"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="STM" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notifier_NoArretTxt"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="49000" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/notifier_AutobusTxt"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="903 Nord:" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notifier_IntersectionTxt"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="Intersection1/Intersection2" >
+                </TextView>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TitreNotification"
+                android:layout_marginBottom="5px"
+                android:layout_toRightOf="@+id/informationNotification" >
+
+                <TextView
+                    android:id="@+id/notifier_HeureReelPassage_TXT"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="4sp"
+                    android:text="@string/notifier_HeureDePassage"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notifier_HeureReelPassage_DATA"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="ab:cd" >
+                </TextView>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/divider"
+                android:minHeight="2px" >
+            </ImageView>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3px"
+                android:layout_marginTop="5px" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notifier_ParametreNotification" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5px"
+                android:layout_toRightOf="@+id/informationNotification" >
+
+                <TextView
+                    android:id="@+id/notifier_Time_TXT"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="4sp"
+                    android:text="@string/notifier_HeureNotification"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/notifier_HeureReelNotification_DATA"
+                    style="@style/TexteStandardPetit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="ab:cd" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/DateHeure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="5" >
+
+                <Button
+                    android:id="@+id/notifier_DateActuelle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:text="Fri, Dec 25, 2009" >
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="3" >
+
+                <Spinner
+                    android:id="@+id/notifier_delaiTimer"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" >
+                </Spinner>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#C0C0C0"
+                android:weightSum="4" >
+
+                <Button
+                    android:id="@+id/notifier_setButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/NotifierDlg_Bouton_Definir" >
+                </Button>
+
+                <Button
+                    android:id="@+id/notifier_clearButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/NotifierDlg_Bouton_Reinitialiser" >
+                </Button>
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+
+</RelativeLayout>

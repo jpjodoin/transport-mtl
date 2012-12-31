@@ -1,0 +1,1 @@
+cithsl;CIT du Haut-Saint-Laurent;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/cithsl/google_transit.zip;stop_id;use-color

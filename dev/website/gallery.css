@@ -1,0 +1,88 @@
+div.content 
+{
+	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+	display: none;
+	float: left;
+}
+div.content a, div.navigation a 
+{
+	text-decoration: none;
+	color: #777;
+
+}
+div.content a:focus, div.content a:hover, div.content a:active 
+{
+	background: none;
+	text-decoration: underline;
+}
+
+
+div.image-title 
+{
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+div.image-desc 
+{
+	width: 400px;
+	text-align: justify;
+	line-height: 1.3em;
+	padding-top: 10px;
+}
+
+ul.thumbs 
+{
+	margin: 0;
+	padding: 0;
+}
+ul.thumbs li 
+{
+	width: 148px;
+}
+a.thumb 
+{
+	padding: 2px;
+	display: block;
+	border: 1px solid #ccc;
+	text-align:center;
+}
+ul.thumbs li.selected a.thumb 
+{
+	background: #FFBC00;
+}
+a.thumb:focus {
+	outline: none;
+}
+ul.thumbs img
+ {
+	border: none;
+}
+div.pagination a, div.pagination span.current, div.pagination span.ellipsis 
+{
+	float: left;
+	margin-right: 2px;
+	padding: 4px 7px 2px 7px;
+	border: 1px solid #ccc;
+}
+div.pagination a:hover 
+{
+	background-color: #eee;
+	text-decoration: none;
+}
+div.pagination span.current
+{
+	font-weight: bold;
+	background-color: #000;
+	border-color: #000;
+	color: #fff;
+}
+div.pagination span.ellipsis 
+{
+	border: none;
+	padding: 5px 0 3px 0px;
+}
+div.gallery
+{
+	float:left;
+}

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTFSParsingServer", "GTFSParsingServer\GTFSParsingServer.vcxproj", "{ED674191-BF1E-4B6A-B064-66BB0A4DCCAD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{7B196868-AA70-4B94-98A9-F9BC3731FADC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{79CC572D-3FD1-4579-8C4B-E271A2B7240C} = {79CC572D-3FD1-4579-8C4B-E271A2B7240C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utils", "Utils\Utils.vcxproj", "{79CC572D-3FD1-4579-8C4B-E271A2B7240C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED674191-BF1E-4B6A-B064-66BB0A4DCCAD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ED674191-BF1E-4B6A-B064-66BB0A4DCCAD}.Debug|Win32.Build.0 = Debug|Win32
+		{ED674191-BF1E-4B6A-B064-66BB0A4DCCAD}.Release|Win32.ActiveCfg = Release|Win32
+		{ED674191-BF1E-4B6A-B064-66BB0A4DCCAD}.Release|Win32.Build.0 = Release|Win32
+		{7B196868-AA70-4B94-98A9-F9BC3731FADC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B196868-AA70-4B94-98A9-F9BC3731FADC}.Debug|Win32.Build.0 = Debug|Win32
+		{7B196868-AA70-4B94-98A9-F9BC3731FADC}.Release|Win32.ActiveCfg = Release|Win32
+		{7B196868-AA70-4B94-98A9-F9BC3731FADC}.Release|Win32.Build.0 = Release|Win32
+		{79CC572D-3FD1-4579-8C4B-E271A2B7240C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{79CC572D-3FD1-4579-8C4B-E271A2B7240C}.Debug|Win32.Build.0 = Debug|Win32
+		{79CC572D-3FD1-4579-8C4B-E271A2B7240C}.Release|Win32.ActiveCfg = Release|Win32
+		{79CC572D-3FD1-4579-8C4B-E271A2B7240C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+citla;CIT des Laurentides;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/citla/google_transit.zip;stop_id;use-color

@@ -1,0 +1,2 @@
+fr;Français;
+en;English;

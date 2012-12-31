@@ -1,0 +1,1 @@
+rtl;Réseau de transport de Longueuil;AUTOBUS;nodisplay-map;display-search;RTLUrlGetter;http://www.rtl-longueuil.qc.ca/;stop_id;nouse-color

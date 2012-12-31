@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory  android:title="Connections">
+<ListPreference
+android:title="Internet connection"
+android:summary="Choose a connection to use"
+android:key="conType"
+android:defaultValue="all-connect"
+android:entries="@array/connexionString"
+android:entryValues="@array/connexionValue" />
+</PreferenceCategory>
+
+
+<PreferenceCategory  android:title="Maintenance">
+<Preference android:summary="Delete all your bookmarks" android:title="Delete bookmarks" android:key="effFavoris"></Preference>
+<Preference android:summary="Delete specific transport service data" android:title="Delete specific data"  android:key="resetDba"></Preference>
+<Preference android:summary="Delete application\'s data and bookmarks" android:title="Reset data" android:key="resetAll"></Preference>
+
+
+<CheckBoxPreference
+android:title="Warning"
+android:defaultValue="true"
+android:summary="Display a warning if database seems out of date."
+android:key="warningValidity" />
+</PreferenceCategory>
+
+<PreferenceCategory  android:title="Customization">
+<ListPreference
+android:title="Start page"
+android:summary="Select your start page"
+android:key="startPage"
+android:defaultValue="select-transport"
+android:entries="@array/homepageString"
+android:entryValues="@array/homepageValue" />
+</PreferenceCategory>
+
+
+
+<PreferenceCategory  android:title="Other">
+<Preference android:summary="Useful information about this application" android:title="User guide" android:key="userguide"></Preference>
+<Preference android:summary="About Rhatec" android:title="About"  android:key="aPropos"></Preference>
+</PreferenceCategory>
+</PreferenceScreen>

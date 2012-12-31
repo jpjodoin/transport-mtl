@@ -1,0 +1,1 @@
+citvr;CIT Vallée du Richelieu;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/citvr/google_transit.zip;stop_id;use-color

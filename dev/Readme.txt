@@ -1,0 +1,6 @@
+----------------------------Français---------------------------
+Structure générale du projet. Il y a un projet C++ (dans le dossier parser) qui permet de faire la conversion entre les données GTFS et le format utilisé par Transport Montréal. Ce programme est dirigé par un script Python accessible dans parser/script. Une fois que c'est fait, on prends les bases de données existante et on déploie sur le site web (disponible dans website). Le script de déploiement n'est pas fournis pour l'instant. Une fois la base de donnée déployé, on peut la télécharger à l'aide de l'application Android (disponible dans le dossier Android).
+
+----------------------------English----------------------------
+General structure of the project. There is a C++ project (parser folder) that allows to do the conversion between GTFS and the more compact format used by Transport Montréal. This program is run using a python script (available in parser/script). Once the database are generated, they are uploaded on a website (source available in the website folder). The upload script is not provided at the moment. Once the database are deployed, they are can be downloaded using the Android application (android folder).
+

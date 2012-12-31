@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20px" >
+
+        <LinearLayout
+            android:id="@+id/SearchLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblArret"
+                style="@style/TexteStandard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15px"
+                android:paddingRight="15px"
+                android:paddingTop="17px"
+                android:text="@string/arret_title_choixarret"
+                android:textSize="20sp" >
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/layoutRecherche"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblArret"
+                android:weightSum="10" >
+
+                <EditText
+                    android:id="@+id/txtboxArret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="9"
+                    android:background="@android:drawable/editbox_background"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="8"
+                    android:textColor="#777777"
+                    android:textSize="20sp" >
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/buttonGo"
+                    style="@style/BoutonStandard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txtboxArret"
+                    android:layout_marginRight="15px"
+                    android:layout_marginTop="3px"
+                    android:layout_weight="1"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/arret_bouton_rechercher" >
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bListeAutobus"
+            style="@style/BoutonStandard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SearchLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:gravity="center"
+            android:minWidth="200sp"
+            android:text="@string/arret_bouton_listecircuit" >
+        </Button>
+
+        <Button
+            android:id="@+id/bCarte"
+            style="@style/BoutonStandard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bListeAutobus"
+            android:layout_alignRight="@+id/bListeAutobus"
+            android:layout_below="@+id/bListeAutobus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:gravity="center"
+            android:text="@string/RechercheArretTrainDlg_PlanReseau" >
+        </Button>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/lblValidite"
+        style="@style/TexteStandard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="10px"
+        android:gravity="bottom|center_horizontal" >
+    </TextView>
+
+</LinearLayout>

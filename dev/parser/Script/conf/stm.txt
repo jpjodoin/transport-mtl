@@ -1,0 +1,1 @@
+stm;Société de transport de Montréal;AUTOBUS;display-map;display-search;UrlGetter;http://www.stm.info/fichiers/gtfs/gtfs_stm.zip;stop_code;use-color

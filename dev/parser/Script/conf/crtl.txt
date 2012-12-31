@@ -1,0 +1,1 @@
+crtl;CRT Lanaudière;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/crtl/google_transit.zip;stop_id;use-color

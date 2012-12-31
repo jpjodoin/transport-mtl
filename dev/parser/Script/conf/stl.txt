@@ -1,0 +1,1 @@
+stl;Société de transport de Laval;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.stl.laval.qc.ca/opendata/GTF_STL.zip;stop_code;nouse-color

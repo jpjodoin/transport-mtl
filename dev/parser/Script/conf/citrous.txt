@@ -1,0 +1,1 @@
+citrous;CIT Roussillon;AUTOBUS;nodisplay-map;display-search;UrlGetter;http://www.amt.qc.ca/xdata/citrous/google_transit.zip;stop_id;use-color
