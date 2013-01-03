@@ -100,7 +100,7 @@ public class DateHelpers
 		for(int i = 0; i < nbHoraire; ++i)
 		{
 			h = listeHoraire.get(i);
-			if(h.ObtenirNom() == date)
+			if(h.ObtenirNom().equals(date))
 			{
 				horaireAConsulterPair.first = i;
 				break;

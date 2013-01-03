@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.rhatec.amtmobile"
     android:installLocation="auto"
-    android:versionCode="24"
-    android:versionName="1.31">
+    android:versionCode="25"
+    android:versionName="1.32">
 
     <uses-sdk android:minSdkVersion="3" />
 
