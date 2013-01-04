@@ -69,7 +69,9 @@ public class OnetimeAlarmReceiver extends BroadcastReceiver
 
 		// Sons
 		notification.defaults |= Notification.DEFAULT_SOUND;
-		notification.flags = Notification.FLAG_INSISTENT;
+		notification.flags = Notification.FLAG_INSISTENT | Notification.FLAG_AUTO_CANCEL;
+		
+		
 
 		// Lumieres
 		notification.defaults |= Notification.DEFAULT_LIGHTS;

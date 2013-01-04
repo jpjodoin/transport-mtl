@@ -15,6 +15,8 @@ android:entryValues="@array/connexionValue" />
 <Preference android:summary="Supprime tous les favoris" android:title="Effacer les favoris" android:key="effFavoris"></Preference>
 <Preference android:summary="Supprimer certaines base de données" android:title="Supprimer base de donnée"  android:key="resetDba"></Preference>
 <Preference android:summary="Supprime tous les favoris et les bases de données" android:title="Remise à zéro" android:key="resetAll"></Preference>
+<Preference android:summary="Supprime la notification courante" android:title="Supprimer notification" android:key="removeNotification"></Preference>
+
 <CheckBoxPreference
 android:title="Avertissement"
 android:defaultValue="true"

@@ -6,10 +6,13 @@ import java.util.HashMap;
 import net.rhatec.amtmobile.R;
 import net.rhatec.amtmobile.helpers.MenuCreator;
 import net.rhatec.amtmobile.manager.FavorisManager;
+import net.rhatec.amtmobile.notifications.OnetimeAlarmReceiver;
 import net.rhatec.amtmobile.providers.TransportProvider;
 import net.rhatec.amtmobile.tasks.DeleteFolderTask;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,6 +48,9 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 
 		Preference resetAll = findPreference("resetAll");
 		resetAll.setOnPreferenceClickListener(this);
+		
+		Preference aPropos = findPreference("aPropos");
+		aPropos.setOnPreferenceClickListener(this);
 
 		Preference userguide = findPreference("userguide");
 		userguide.setOnPreferenceClickListener(this);
@@ -54,8 +60,10 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 		startPage.setOnPreferenceClickListener(this);
 		 
 
-		Preference aPropos = findPreference("aPropos");
-		aPropos.setOnPreferenceClickListener(this);
+		Preference removeNotification = findPreference("removeNotification");
+		removeNotification.setOnPreferenceClickListener(this);
+		
+		
 
 	}
 
@@ -107,6 +115,13 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 		{
 			startActivity(new Intent(this, UserManualDlg.class));
 
+		}
+		else if (preference.getKey().equals("removeNotification"))
+		{
+			Intent intentToFire = new Intent(this, OnetimeAlarmReceiver.class);
+			PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intentToFire, PendingIntent.FLAG_UPDATE_CURRENT);
+			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+			alarmManager.cancel(pendingIntent);
 		}
 		
 		  else if(preference.getKey().equals("startPage")) 
