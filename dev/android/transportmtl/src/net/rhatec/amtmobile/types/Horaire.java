@@ -14,8 +14,8 @@ import android.content.Context;
  *               type d'horaire. Cette objet horaire contient: - un nom
  *               d'horaire (SAMEDI, DIMANCHE, SEMAINE) - de l'extraInfo pour
  *               l'horaire - un tableau d'objet Temps qui n'est qu'un objet Time
- *               Java avec plusieurs informations visant à savoir si c'est un
- *               horaire spéciale ou bien pour handicapé etc.
+ *               Java avec plusieurs informations visant ï¿½ savoir si c'est un
+ *               horaire spï¿½ciale ou bien pour handicapï¿½ etc.
  * 
  */
 public class Horaire
@@ -49,7 +49,7 @@ public class Horaire
 	
 	public String Serialize()
 	{
-		StringBuilder sb = new StringBuilder(m_TimeArray.size()*5+m_strHoraireNom.length()+m_strHoraireExtraInfo.length()); //TODO: Vérifier que la taille est ok
+		StringBuilder sb = new StringBuilder(m_TimeArray.size()*5+m_strHoraireNom.length()+m_strHoraireExtraInfo.length()); //TODO: Vï¿½rifier que la taille est ok
 		sb.append("h;");
 		sb.append(m_strHoraireNom).append(";").append(m_strHoraireExtraInfo).append(";");
 		for (Temps t : m_TimeArray)
@@ -105,7 +105,7 @@ public class Horaire
 
 	/**
 	 * Prend un argument de type 1200 (qui sera convertis par time en 12:00) et
-	 * l'ajoute à un vecteur
+	 * l'ajoute ï¿½ un vecteur
 	 * 
 	 * @param strData
 	 *            String de texte du format des .dba
@@ -152,7 +152,6 @@ public class Horaire
 			// On ne va considerer que les horaires apres minuit
 			if (this.obtenirPositionApresMinuit() != -1)
 				i = this.obtenirPositionApresMinuit();
-
 		}
 		while (i < m_TimeArray.size() && nbrPassage > prochainArret.size())
 		{
@@ -162,7 +161,7 @@ public class Horaire
 			if (m_TimeArray.get(i).m_PassageAIntervalle)
 			{
 				// est ce que le prochain passage hormis les 3 points (...) a
-				// déjà eu lieu ?
+				// dï¿½jï¿½ eu lieu ?
 				Time tTempsProchainVecteur = m_TimeArray.get(i + 1).m_Time;
 
 				if (tTempsProchainVecteur.hour != heureChaqueSixMinute)
@@ -174,7 +173,7 @@ public class Horaire
 					}
 				}
 
-			} else if ((actuelTime.hour == tTemps.hour && actuelTime.minute < tTemps.minute) || actuelTime.hour < tTemps.hour)
+			} else if ((actuelTime.hour == tTemps.hour && actuelTime.minute <= tTemps.minute) || actuelTime.hour < tTemps.hour)
 			{
 				if (DateFormat.is24HourFormat(context))
 				{
@@ -195,7 +194,7 @@ public class Horaire
 
 		if (apresMinuit == false)
 		{
-			int positionApresMinuit = this.obtenirPositionApresMinuit();
+			int positionApresMinuit = obtenirPositionApresMinuit();
 
 			if (positionApresMinuit != -1 && nbrPassage > prochainArret.size())
 			{
@@ -242,7 +241,7 @@ public class Horaire
 			if (m_TimeArray.get(i).m_PassageAIntervalle)
 			{
 				// est ce que le prochain passage hormis les 3 points (...) a
-				// déjà eu lieu ?
+				// dï¿½jï¿½ eu lieu ?
 				Time tTempsProchainVecteur = m_TimeArray.get(i + 1).m_Time;
 
 				if (tTempsProchainVecteur.hour != heureChaqueSixMinute)
@@ -279,8 +278,8 @@ public class Horaire
 		{
 			Time tTemps = m_TimeArray.get(i).m_Time;
 			// 99 >= tTemps.hour, 99 23h39 0h09 0h40 1h35 et 1h12
-			// L'algo consiste à trouver une heure plus petite que 99h99 ou bien
-			// l'heure la plus petite que l'heure enregistré. On determine
+			// L'algo consiste ï¿½ trouver une heure plus petite que 99h99 ou bien
+			// l'heure la plus petite que l'heure enregistrï¿½. On determine
 			// ensuite si l'heure precedente et plus grande
 			// que l'heure la plus petite qu'on possede. Si c'est le cas, nous
 			// avons la premiere heure apres minuit.

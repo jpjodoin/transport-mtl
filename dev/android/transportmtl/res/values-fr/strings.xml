@@ -57,7 +57,7 @@
     <string name="ListeArretDlg_Aucun_horaire_disponible">Aucun horaire disponible</string>
     <string name="ListeArretDlg_Debarcadere_seulement">Débarcadère seulement</string>
     <string name="ListeCircuitDlg_Liste_de_circuit_pour">Liste de circuit pour</string>
-    <string name="MiseAJourDlg_Mise_a_jour_terminee_succes">Mise à Jour terminée avec succès</string>
+    <string name="MiseAJourDlg_Mise_a_jour_terminee_succes">Mise à jour terminée avec succès</string>
     <string name="MiseAJourDlg_miseAjour_annule_par_utilisateur">La mise à jour a été annulé par l\'utilisateur</string>
     <string name="MiseAJourDlg_Carte_SD_absente">Carte SD absente</string>
     <string name="MiseAJourDlg_CarteSD_obligatoire_chargement_bases_de_donnees">Celle-ci est obligatoire pour le chargement des bases de données</string>

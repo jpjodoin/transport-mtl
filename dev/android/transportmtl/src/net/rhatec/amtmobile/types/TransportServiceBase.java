@@ -107,9 +107,9 @@ public class TransportServiceBase implements SerializableObject
 		String resultat = _context.getString(R.string.TransportServiceBase_Date_Inconnu);
 		if (!_date.equals("0") && _date.length() == 8)
 		{
-			StringBuffer Stringdate = new StringBuffer(_date.substring(0, 4) + "/");
+			StringBuffer Stringdate = new StringBuffer(_date.substring(6, 8) + "/");
 			Stringdate.append(_date.substring(4, 6) + "/");
-			Stringdate.append(_date.substring(6, 8));
+			Stringdate.append(_date.substring(0, 4));
 			resultat = Stringdate.toString();
 		}
 		return resultat;

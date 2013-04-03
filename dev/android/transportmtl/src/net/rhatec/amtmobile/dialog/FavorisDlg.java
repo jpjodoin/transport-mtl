@@ -63,7 +63,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 		m_modifier.setOnClickListener(this);
 
 		m_ListeView = (ExpandableListView) findViewById(R.id.list);
-		m_ListeView.setGroupIndicator(null); /*getResources().getDrawable(R.drawable.my_group_statelist)*/
+		m_ListeView.setGroupIndicator(null); 
 		m_ListeView.setOnGroupClickListener(this);
 	
 		m_ListeView.setOnChildClickListener(this);	

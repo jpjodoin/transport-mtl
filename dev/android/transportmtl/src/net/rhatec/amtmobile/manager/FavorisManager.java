@@ -43,24 +43,8 @@ public class FavorisManager
 			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8*512 char
 			if (in != null)
 			{
-				//String strLine = in.readLine();
-								
 				String favorisAAJouter = favoris.Serialize();//= strTransportService + ";" + strAutobus + ";" + strDirection + ";" + strArret + ";" + strIntersection + ";" + nLigneFavoris + ";" + codeExtraInfo;
-				//int pos = favorisAAJouter.indexOf('\n');
-				//favoris
-				// On v�rifie si l arret est deja dans les favoris
-				/*while (strLine != null)
-				{
-					/*if (strLine.charAt(0) == 'f' && strLine.equals(favorisAAJouter.substring(0, pos)))
-					{
-						retour = new Message(false, R.string.Horaire_msg_ajout_favoris_deja_existant);
-						return retour;
-					}
-
-					strLine = in.readLine();
-				}*/
 				in.close();
-				// �criture du fichier favoris
 				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "favoris.dba", true), "8859_1");
 				out.write(favorisAAJouter);
 				out.close();
@@ -210,46 +194,7 @@ public class FavorisManager
 	}
 	
 
-/*	public static boolean supprimerItemFavoris(int position)
-	{
-		boolean result = false;
-		try
-		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8
-																																		// *
-																																		// 512caracteres
-			if (in != null)
-			{
-				String strLine = in.readLine();
-				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "favorisTemp.dba", false), "8859_1");
 
-				int i = -1;
-				// On ne recopie le fichier sans les favoris supprimes.
-				while (strLine != null)
-				{				
-					if(strLine.charAt(0) == 'f')
-						++i;
-					if (i != position)
-					{
-						out.write(strLine + "\n");
-					}
-
-					strLine = in.readLine();
-				}
-				in.close();
-				out.close();
-				File ancienFavoris = new File(TransportProvider.getRootPath() + "favoris.dba");
-				File nouveauFavoris = new File(TransportProvider.getRootPath() + "favorisTemp.dba");
-				result = nouveauFavoris.renameTo(ancienFavoris) ? true : false;
-				in.close();
-			}
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		return result;
-
-	}*/
 
 	/**
 	 * Supprime les favoris totalement.

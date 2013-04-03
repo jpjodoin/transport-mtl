@@ -62,8 +62,6 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 
 		Preference removeNotification = findPreference("removeNotification");
 		removeNotification.setOnPreferenceClickListener(this);
-		
-		
 
 	}
 
@@ -123,13 +121,12 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 			AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 			alarmManager.cancel(pendingIntent);
 		}
-		
-		  else if(preference.getKey().equals("startPage")) 
-		  {
+		else if(preference.getKey().equals("startPage")) 
+		{
 			 // Toast.makeText(getBaseContext(),
 			 // FavorisManager.supprimerFichierFavoris(), Toast.LENGTH_LONG).show();
-		 }
-		 
+		}
+	
 		else
 		{
 			success = false;

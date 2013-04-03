@@ -24,30 +24,23 @@
                 style="@style/FavorisItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:layout_weight="0"
+                android:layout_weight="0"
                 android:paddingLeft="10sp"
                 android:paddingRight="10sp"
                 android:text="49000"
-                
                 android:textSize="18sp"
                 android:width="70dp" >
+
             </TextView>
-
-
-
-
-
-
 
             <TextView
                 android:id="@+id/IntersectionTxt"
                 style="@style/FavorisItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="4sp"
                 android:layout_weight="5"
                 android:gravity="left"
-                
+                android:paddingLeft="4sp"
                 android:paddingRight="4sp"
                 android:text="Intersection1/WALALALLALAALIntersection2"
                 android:textSize="18sp" >
@@ -71,6 +64,7 @@
                 android:text="903 Nord:"
                 android:textSize="14sp"
                 android:width="85dp" >
+
             </TextView>
 
             <TextView
@@ -83,7 +77,8 @@
                 android:paddingLeft="4sp"
                 android:paddingRight="10px"
                 android:text="ExtraInfo"
-                android:textSize="18sp" >
+                  android:textSize="18sp" >
+
             </TextView>
         </TableRow>
 

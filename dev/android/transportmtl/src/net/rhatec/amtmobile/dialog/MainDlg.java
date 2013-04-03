@@ -1,5 +1,7 @@
 package net.rhatec.amtmobile.dialog;
 
+import java.util.Locale;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -53,6 +55,10 @@ public class MainDlg extends Activity implements EulaManager.OnEulaAgreedTo
 		}
 		else
 		{
+			
+			
+			
+			
 			m_TransportLock = UpdateManager.ReadLock(); // En cas de corruption de la base de donn�e lors de la mise � jour, il y aura un nom
 			if (m_TransportLock != null)
 			{
@@ -64,6 +70,8 @@ public class MainDlg extends Activity implements EulaManager.OnEulaAgreedTo
 
 			VersionManager.upgradeIfNeeded(this);	
 	
+		
+			
 			
 			//Forward to Accueil choisi
 			String pref = preferences.getString("startPage", "select-transport");
