@@ -1,22 +1,16 @@
 package net.rhatec.amtmobile.view;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Vector;
-
 import net.rhatec.amtmobile.R;
 import net.rhatec.amtmobile.types.Favoris;
 import net.rhatec.amtmobile.types.FavorisGroupe;
 import net.rhatec.amtmobile.types.FavorisNode;
 import net.rhatec.amtmobile.types.FavorisType;
-import net.rhatec.amtmobile.types.Horaire;
-
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;

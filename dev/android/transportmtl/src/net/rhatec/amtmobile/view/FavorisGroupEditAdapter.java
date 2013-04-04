@@ -3,7 +3,6 @@ package net.rhatec.amtmobile.view;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import net.rhatec.amtmobile.types.FavorisNode;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;

@@ -324,7 +324,6 @@ public class TransportProvider
 	{
 		Vector<Autobus> vAutobus = new Vector<Autobus>(3);
 		HoraireArret vHoraireArret = new HoraireArret();
-		String strIntersection = null;
 		FileReaderIface in = null;
 		try
 		{

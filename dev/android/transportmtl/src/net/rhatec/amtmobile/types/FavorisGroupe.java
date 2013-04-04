@@ -1,8 +1,6 @@
 package net.rhatec.amtmobile.types;
 
 import java.util.ArrayList;
-import java.util.Vector;
-
 import android.graphics.Color;
 
 

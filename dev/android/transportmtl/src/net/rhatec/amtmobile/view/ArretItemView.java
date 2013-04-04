@@ -4,7 +4,6 @@ import net.rhatec.amtmobile.R;
 import net.rhatec.amtmobile.types.Arret;
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;

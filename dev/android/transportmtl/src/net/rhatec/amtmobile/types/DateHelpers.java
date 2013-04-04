@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map.Entry;
 import java.util.Vector;
 
 import net.rhatec.amtmobile.R;

@@ -1,7 +1,5 @@
 package net.rhatec.amtmobile.dialog;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
