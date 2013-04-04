@@ -20,6 +20,16 @@
         <item>bookmarks</item>
 </array>
 
+<array name="storageString">
+        <item>Externe</item>
+        <item>Interne</item>
+</array>
+<array name="storageValue">
+        <item>external</item>
+        <item>internal</item>
+</array>
+
+
 
 
 

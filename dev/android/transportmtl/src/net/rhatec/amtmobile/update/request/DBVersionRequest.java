@@ -10,9 +10,11 @@ import net.rhatec.amtmobile.types.UpdateStruct;
 
 public class DBVersionRequest extends HttpRequest
 {
+	private Context mApplicationContext;
 	public DBVersionRequest(String updateServer, Context applicationContext)
 	{
 		super(updateServer, applicationContext);
+		mApplicationContext = applicationContext;
 	}
 
 	private Vector<UpdateStruct>	m_vUpdate	= new Vector<UpdateStruct>();
@@ -49,12 +51,12 @@ public class DBVersionRequest extends HttpRequest
 		{
 			for (int i = 0; i < arraySize; i = i + 3)
 			{
-				if (!strResult[i + 2].contentEquals(TransportProvider.GetVersionNumber(strResult[i])))
+				if (!strResult[i + 2].contentEquals(TransportProvider.GetVersionNumber(mApplicationContext, strResult[i])))
 				{
 					UpdateStruct struct = new UpdateStruct();
 					struct.m_strShortName = strResult[i];
 					struct.m_nSize = strResult[i + 1];
-					struct.m_IsChecked = TransportProvider.DatabaseExist(strResult[i]);
+					struct.m_IsChecked = TransportProvider.DatabaseExist(mApplicationContext, strResult[i]);
 					m_vUpdate.add(struct);
 				}
 			}

@@ -85,7 +85,7 @@ public class HoraireDlg extends Activity implements OnItemSelectedListener, OnIt
 		m_nPositionInFile = Long.parseLong(b.getString(TypeString.POSITIONOCTET));
 		m_infoDirectionCode = b.getString(TypeString.INFODIRECTIONCODE);
 		m_infoCircuitCode = b.getString(TypeString.INFOCIRCUITCODE);
-		TransportServiceInfo service = TransportProvider.ObtenirTransportService(m_NomTransportService);
+		TransportServiceInfo service = TransportProvider.ObtenirTransportService(this, m_NomTransportService);
 
 		//Set layout depending on screen orientation TODO: This should be an helper method
 		WindowManager wm = getWindowManager();
@@ -99,9 +99,9 @@ public class HoraireDlg extends Activity implements OnItemSelectedListener, OnIt
 
 		HoraireArret hArret;
 		if (m_nPositionInFile != 0)
-			hArret = TransportProvider.ObtenirListeHoraireAutobus(m_NomTransportService, m_NoArret, m_nPositionInFile);
+			hArret = TransportProvider.ObtenirListeHoraireAutobus(this, m_NomTransportService, m_NoArret, m_nPositionInFile);
 		else
-			hArret = TransportProvider.ObtenirListeHoraireAutobus(m_NomTransportService, m_NoArret);
+			hArret = TransportProvider.ObtenirListeHoraireAutobus(this, m_NomTransportService, m_NoArret);
 
 		int eError = hArret.ObtenirErreur();
 
@@ -109,11 +109,11 @@ public class HoraireDlg extends Activity implements OnItemSelectedListener, OnIt
 		if (eError == 0)
 		{
 			// Initialisation des maps
-			mapInfoDirection = TransportProvider.ObtenirPhraseInfoDirection(m_NomTransportService);
-			mapInfoCircuit = TransportProvider.ObtenirPhraseInfoCircuit(m_NomTransportService);
-			m_ExtraInfoHoraire = TransportProvider.ObtenirPhraseInfoHoraire(m_NomTransportService);
-			m_JourFerie = TransportProvider.ObtenirMapJourFerie(m_NomTransportService);
-			HashMap<String, String> busNameMap = TransportProvider.ObtenirMapNomCircuit(m_NomTransportService);
+			mapInfoDirection = TransportProvider.ObtenirPhraseInfoDirection(this, m_NomTransportService);
+			mapInfoCircuit = TransportProvider.ObtenirPhraseInfoCircuit(this, m_NomTransportService);
+			m_ExtraInfoHoraire = TransportProvider.ObtenirPhraseInfoHoraire(this, m_NomTransportService);
+			m_JourFerie = TransportProvider.ObtenirMapJourFerie(this, m_NomTransportService);
+			HashMap<String, String> busNameMap = TransportProvider.ObtenirMapNomCircuit(this, m_NomTransportService);
 
 			// Initialisation des variables
 			m_nPositionInFile = hArret.ObtenirBytesPosition();
@@ -446,7 +446,7 @@ public class HoraireDlg extends Activity implements OnItemSelectedListener, OnIt
 			
 			Favoris favoris = new Favoris(m_NomTransportService, m_strNoAutobus, m_strDirectionBus, m_NoArret, m_NomIntersection, m_nPositionInFile, m_infoDirectionCode, m_CurrentDirectionVector.get(sListeDirection.getSelectedItemPosition()).ObtenirVecteurHoraire(), m_infoCircuitCode);
 			
-			Message message = FavorisManager.ajouterFavoris(favoris);
+			Message message = FavorisManager.ajouterFavoris(this, favoris);
 
 			alertDialog.setMessage(this.getString(message.getMessage()));
 			alertDialog.setButton(this.getString(R.string.general_ok), new DialogInterface.OnClickListener() {

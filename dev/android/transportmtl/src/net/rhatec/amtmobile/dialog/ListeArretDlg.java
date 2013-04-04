@@ -46,13 +46,13 @@ public class ListeArretDlg extends ListActivityWithMenu implements OnItemClickLi
 		lView.setClickable(true);
 		lView.setOnItemClickListener(this);
 
-		vListeArret = TransportProvider.ObtenirListeArret(m_TransportName, m_NoAutobus, m_InfoCircuitCode, m_Direction, m_InfoDirectionCode);
+		vListeArret = TransportProvider.ObtenirListeArret(this, m_TransportName, m_NoAutobus, m_InfoCircuitCode, m_Direction, m_InfoDirectionCode);
 		ArretAdapter liste = new ArretAdapter(this, vListeArret);
 		setListAdapter(liste);
 
 	}
 
-	// TODO: Hardcode à enlever
+	// TODO: Hardcode ï¿½ enlever
 	@Override
 	public void onItemClick(AdapterView<?> parent, View v, int position, long id)
 	{
@@ -73,7 +73,7 @@ public class ListeArretDlg extends ListActivityWithMenu implements OnItemClickLi
 		this.startActivityForResult(iHoraire, 1);
 	}
 
-	// Quand l'activité retourne
+	// Quand l'activitï¿½ retourne
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{

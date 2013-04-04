@@ -12,15 +12,17 @@ import android.content.Context;
 public class ValidityRequest extends HttpRequest
 {
 
+	private Context mApplicationContext;
 	public ValidityRequest(String updateServer, Context applicationContext)
 	{
 		super(updateServer, applicationContext);
+		mApplicationContext = applicationContext;
 	}
 
 	@Override
 	public String getRequest()
 	{
-		Vector<TransportServiceBase> vector = ListeSocieteManager.obtenirListe();
+		Vector<TransportServiceBase> vector = ListeSocieteManager.obtenirListe(mApplicationContext);
 		String request = null;
 		if (!vector.isEmpty())
 		{
@@ -30,7 +32,7 @@ public class ValidityRequest extends HttpRequest
 			for(TransportServiceBase a: vector)
 			{
 				String shortName = a.getShortName();
-				uriBuilder.append(shortName + ";" + TransportProvider.GetVersionNumber(shortName) + ";");
+				uriBuilder.append(shortName + ";" + TransportProvider.GetVersionNumber(mApplicationContext, shortName) + ";");
 			}
 
 			request = uriBuilder.toString();
@@ -47,14 +49,14 @@ public class ValidityRequest extends HttpRequest
 		int arraySize = strResult.length;
 		if ((arraySize % 3) == 0)
 		{
-			File RootFolder = new File(TransportProvider.getRootPath());
+			File RootFolder = new File(TransportProvider.getRootPath(mApplicationContext));
 			RootFolder.mkdir();
 			for (int i = 2; i < arraySize; i = i + 3)
 			{
-				TransportServiceInfo service = TransportProvider.ObtenirTransportService(strResult[i - 2]);
+				TransportServiceInfo service = TransportProvider.ObtenirTransportService(mApplicationContext, strResult[i - 2]);
 				service.setdebutValidite(strResult[i - 1]);
 				service.setFinValidite(strResult[i]);
-				ListeSocieteManager.ajouterSociete(service);
+				ListeSocieteManager.ajouterSociete(mApplicationContext, service);
 			}
 		} else
 			error = m_context.getString(R.string.UpdateManager_protocole_non_supporte);

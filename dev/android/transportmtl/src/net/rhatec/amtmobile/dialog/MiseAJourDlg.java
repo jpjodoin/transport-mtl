@@ -167,7 +167,7 @@ public class MiseAJourDlg extends ActivityWithMenu implements OnClickListener
 						strUpdateArray.add(c.getText().toString());
 				}
 				
-				m_UpdateManager.GetDatabase(strUpdateArray);
+				m_UpdateManager.GetDatabase(this, strUpdateArray);
 			}
 			break;
 
@@ -222,7 +222,12 @@ public class MiseAJourDlg extends ActivityWithMenu implements OnClickListener
 		TextView lblSDCard = (TextView) findViewById(R.id.lblSDCardDetection);
 		TextView lblError = (TextView) findViewById(R.id.lblError);
 
-		if (!android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
+
+		if (PreferenceManager.getDefaultSharedPreferences(this).getString("storage", "external").equals("internal"))
+		{
+			lblSDCard.setText("");
+		}		
+		else if (!android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
 		{
 			lblSDCard.setText(getResources().getString(R.string.MiseAJourDlg_Carte_SD_absente));
 			lblError.setText(getResources().getString(R.string.Erreur) + ": " + getResources().getString(R.string.MiseAJourDlg_Carte_SD_absente) + ". "

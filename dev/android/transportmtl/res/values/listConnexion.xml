@@ -19,4 +19,13 @@
         <item>select-transport</item>
         <item>bookmarks</item>
 </array>
+
+<array name="storageString">
+        <item>External</item>
+        <item>Internal</item>
+</array>
+<array name="storageValue">
+        <item>external</item>
+        <item>internal</item>
+</array>
 </resources>

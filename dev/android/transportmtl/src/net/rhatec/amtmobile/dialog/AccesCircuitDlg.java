@@ -33,7 +33,7 @@ public class AccesCircuitDlg extends ListActivity implements OnItemClickListener
 		m_NomTransport = b.getString(TypeString.SOCIETECODE);
 		m_NoAutobus = b.getString(TypeString.NOCIRCUIT);
 		String direction = b.getString(TypeString.DIRECTIONARRAY);
-		TransportServiceInfo service = TransportProvider.ObtenirTransportService(m_NomTransport);
+		TransportServiceInfo service = TransportProvider.ObtenirTransportService(this, m_NomTransport);
 		boolean AfficherExtraInfo = service.isAffichageExtraInfoDirection();
 		ListView listView = getListView();
 		listView.setOnItemClickListener(this);		

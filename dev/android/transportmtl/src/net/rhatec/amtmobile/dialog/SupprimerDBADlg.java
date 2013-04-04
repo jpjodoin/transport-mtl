@@ -2,6 +2,7 @@ package net.rhatec.amtmobile.dialog;
 
 import java.util.Vector;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -51,7 +52,7 @@ public class SupprimerDBADlg extends ActivityWithMenu implements OnClickListener
 		tableRowTitle.addView(titre1);
 		tableLayout.addView(tableRowTitle);
 
-		m_liste = ListeSocieteManager.obtenirListe();
+		m_liste = ListeSocieteManager.obtenirListe(this);
 
 		if (!m_liste.isEmpty())
 		{
@@ -130,6 +131,7 @@ public class SupprimerDBADlg extends ActivityWithMenu implements OnClickListener
 
 	public void supprimerDBASelectionne()
 	{
+		final Context c = this;
 		Thread runningThread = new Thread() {
 			@Override
 			public void run()
@@ -138,10 +140,10 @@ public class SupprimerDBADlg extends ActivityWithMenu implements OnClickListener
 				mHandler.post(mUpdateResults);
 				for (String societe : m_transportToDelete)
 				{
-					FileManager.deleteDir(TransportProvider.getRootPath() + societe + "/");
-					ListeSocieteManager.supprimerSociete(societe);
+					FileManager.deleteDir(TransportProvider.getRootPath(c) + societe + "/");
+					ListeSocieteManager.supprimerSociete(c, societe);
 				}
-				FavorisManager.supprimerFavorisSociete(m_transportToDelete);
+				FavorisManager.supprimerFavorisSociete(c, m_transportToDelete);
 				m_StateProgress = 1;
 				mHandler.post(mUpdateResults);
 				finish();

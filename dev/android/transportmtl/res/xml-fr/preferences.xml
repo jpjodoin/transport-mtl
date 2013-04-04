@@ -31,6 +31,13 @@ android:key="startPage"
 android:defaultValue="select-transport"
 android:entries="@array/homepageString"
 android:entryValues="@array/homepageValue" />
+<ListPreference
+android:title="Stockage"
+android:summary="Où enregistrer les données"
+android:key="storage"
+android:defaultValue="external"
+android:entries="@array/storageString"
+android:entryValues="@array/storageValue" />
 </PreferenceCategory>
 <PreferenceCategory  android:title="Autre">
 <Preference android:summary="Information utile à propos de l\'application." android:title="Manuel de l\'utilisateur" android:key="userguide"></Preference>

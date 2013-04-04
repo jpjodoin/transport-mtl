@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Vector;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 
 import net.rhatec.amtmobile.file.BufferedFileReader;
 import net.rhatec.amtmobile.file.FileReaderIface;
@@ -19,11 +22,25 @@ import net.rhatec.amtmobile.types.TransportServiceInfo;
 
 public class TransportProvider
 {
-	static String	m_RootPath	= Environment.getExternalStorageDirectory().getAbsolutePath()+"/transportmtldata/";//"sdcard/transportmtldata/";
+	
+	
+	//static String	m_RootPath	= Environment.getExternalStorageDirectory().getAbsolutePath()+"/transportmtldata/";//"sdcard/transportmtldata/";
 	public final static String NOKEYFOUNDINMAP = " ";
-	static public String getRootPath()
+	static public String getRootPath(Context c)
 	{
-		return m_RootPath;
+		String rootPath = "";
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
+		String pref = preferences.getString("storage", "external");
+		if(pref.equals("internal"))
+		{
+			rootPath = c.getFilesDir().getAbsolutePath();
+		}
+		else //external
+		{			
+			rootPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+		}
+		rootPath += "/transportmtldata/";
+		return rootPath;
 	}
 
 	/**
@@ -35,12 +52,12 @@ public class TransportProvider
 	 */
 	// Version;NomComplet;Type; Affichage Extra Info (0 si on ne l'affiche pas,
 	// 1 si on l'affiche) ;
-	static public String GetVersionNumber(String _strName)
+	static public String GetVersionNumber(Context c,String _strName)
 	{
 		String version = "0";
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _strName + "/" + "info.dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _strName + "/" + "info.dba");
 			if (in != null)
 			{
 				String strLine = in.readLine();
@@ -59,12 +76,12 @@ public class TransportProvider
 		return version;
 	}
 
-	static public TransportServiceInfo ObtenirTransportService(String _strName)
+	static public TransportServiceInfo ObtenirTransportService(Context c,String _strName)
 	{
 		TransportServiceInfo service = null;
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _strName + "/" + "info.dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _strName + "/" + "info.dba");
 			if (in != null)
 			{
 				String strLine = in.readLine();
@@ -86,10 +103,10 @@ public class TransportProvider
 		return service;
 	}
 
-	static public boolean DatabaseExist(String strName)
+	static public boolean DatabaseExist(Context c,String strName)
 	{
 		boolean fSuccess = false;
-		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + strName + "/" + "info.dba");
+		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + strName + "/" + "info.dba");
 		if (in != null)
 		{
 			try
@@ -114,12 +131,12 @@ public class TransportProvider
 	 * @param _nomSocieteTransport
 	 * @return Retourne un vecteur d'objet autobus
 	 */
-	static public Vector<Autobus> ObtenirListeCircuit(String _nomSocieteTransport)
+	static public Vector<Autobus> ObtenirListeCircuit(Context c, String _nomSocieteTransport)
 	{
 		Vector<Autobus> vAutobus = new Vector<Autobus>(50);
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _nomSocieteTransport + "/" + "listecircuit.dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _nomSocieteTransport + "/" + "listecircuit.dba");
 			String strLine = in.readLine();
 			while (strLine != null)
 			{
@@ -148,12 +165,12 @@ public class TransportProvider
 	 * @param strTransportNom
 	 * @return Retourne un vecteur d'objet autobus pour une ligne specifique
 	 */
-	static public Vector<Autobus> ObtenirListeCircuitParNumero(String _nomSocieteTransport, String _noAutobus)
+	static public Vector<Autobus> ObtenirListeCircuitParNumero(Context c, String _nomSocieteTransport, String _noAutobus)
 	{
 		Vector<Autobus> vAutobus = new Vector<Autobus>(50);
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _nomSocieteTransport + "/" + "listecircuit.dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _nomSocieteTransport + "/" + "listecircuit.dba");
 			String strLine = in.readLine();
 			while (strLine != null)
 			{
@@ -183,12 +200,12 @@ public class TransportProvider
 	 * @return Vecteur contenant les arr�ts des fichiers ex: "42n.dba"
 	 */
 	//TODO: Methode qui retourne les noms de fichier en fonction des arguments...
-	public static Vector<Arret> ObtenirListeArret(String _nomSocieteTransport, String _strCircuit, String infoCircuitCode,String _strDirection, String infoDirectionCode)
+	public static Vector<Arret> ObtenirListeArret(Context c, String _nomSocieteTransport, String _strCircuit, String infoCircuitCode,String _strDirection, String infoDirectionCode)
 	{
 		Vector<Arret> vArret = new Vector<Arret>(10);
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _nomSocieteTransport + "/listecircuit/" + _strCircuit + infoCircuitCode + _strDirection + infoDirectionCode + ".dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _nomSocieteTransport + "/listecircuit/" + _strCircuit + infoCircuitCode + _strDirection + infoDirectionCode + ".dba");
 			if (in != null)
 			{
 				String strLine = in.readLine();
@@ -226,12 +243,12 @@ public class TransportProvider
 	 *            Num�ro de l'arr�t d�sir�
 	 * @return Vecteur contenant les arr�ts des fichiers ex: "42n.dba"
 	 */
-	public static Arret ObtenirUnArret(String societe, String noCircuit, String infoCircuit, String direction, String infoDirection, String noArret)
+	public static Arret ObtenirUnArret(Context c, String societe, String noCircuit, String infoCircuit, String direction, String infoDirection, String noArret)
 	{
 		Arret arret = null;
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() +
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) +
 					societe + "/listecircuit/" + noCircuit + infoCircuit +  direction  + infoDirection
 					+ ".dba");
 			String strLine = in.readLine();
@@ -265,16 +282,16 @@ public class TransportProvider
 	 * @param _strArret
 	 * @return HoraireArret
 	 */
-	public static HoraireArret ObtenirListeHoraireAutobus(String _nomSocieteTransport, String _strArret)
+	public static HoraireArret ObtenirListeHoraireAutobus(Context c, String _nomSocieteTransport, String _strArret)
 	{
-		return ObtenirListeHoraireAutobus(_nomSocieteTransport, _strArret, -1); // Position dans le fichier inconnu
+		return ObtenirListeHoraireAutobus(c, _nomSocieteTransport, _strArret, -1); // Position dans le fichier inconnu
 	}
 
 	
-	public static Vector<Horaire> ObtenirListeHorairePourUnAutobus(String _nomSocieteTransport, String noAutobus, String direction, String extrainfodirection, String _strArret, long _lineNumber, String extrainfocircuit)
+	public static Vector<Horaire> ObtenirListeHorairePourUnAutobus(Context c, String _nomSocieteTransport, String noAutobus, String direction, String extrainfodirection, String _strArret, long _lineNumber, String extrainfocircuit)
 	{
 		Vector<Horaire> vHoraire = null;
-		HoraireArret ha = ObtenirListeHoraireAutobus(_nomSocieteTransport, _strArret, _lineNumber);
+		HoraireArret ha = ObtenirListeHoraireAutobus(c, _nomSocieteTransport, _strArret, _lineNumber);
 		if(ha.ObtenirErreur() == HoraireArret.AUCUNE_ERREUR)
 		{
 			Vector<Autobus> busVect = ha.ObtenirAutobus();
@@ -303,7 +320,7 @@ public class TransportProvider
 	 * @warnings Doit lancer une exception ou bien retourner un bool. L'arret
 	 *           peut ne plus exister !!!!
 	 */
-	public static HoraireArret ObtenirListeHoraireAutobus(String societe, String noarret, long posfichier)
+	public static HoraireArret ObtenirListeHoraireAutobus(Context c, String societe, String noarret, long posfichier)
 	{
 		Vector<Autobus> vAutobus = new Vector<Autobus>(3);
 		HoraireArret vHoraireArret = new HoraireArret();
@@ -314,10 +331,10 @@ public class TransportProvider
 
 			if (posfichier != -1)
 			{
-				in = FileHelpers.createRandomAccessFileAndSeek(getRootPath() + societe + "/listearret/horaire.dba", posfichier);
+				in = FileHelpers.createRandomAccessFileAndSeek(getRootPath(c) + societe + "/listearret/horaire.dba", posfichier);
 			} else
 			{
-				in = FileHelpers.createBufferedFileInputStream(getRootPath() + societe + "/listearret/horaire.dba");
+				in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + societe + "/listearret/horaire.dba");
 
 			}
 
@@ -425,14 +442,14 @@ public class TransportProvider
 	 *            code de l<extra info
 	 * @return Une map de l'extra
 	 */
-	public static String ObtenirPhraseInfoDirectionSpecifique(String _nomSocieteTransport, String infoDirectionCode)
+	public static String ObtenirPhraseInfoDirectionSpecifique(Context c, String _nomSocieteTransport, String infoDirectionCode)
 	{
-		return StringDeMapAvecCleSpecifique(getRootPath() + _nomSocieteTransport + "/" + "listeextrainfodirection.dba", infoDirectionCode);
+		return StringDeMapAvecCleSpecifique(getRootPath(c) + _nomSocieteTransport + "/" + "listeextrainfodirection.dba", infoDirectionCode);
 	}
 
-	public static String ObtenirPhraseInfoCircuitSpecifique(String _nomSocieteTransport, String infoCircuitCode)
+	public static String ObtenirPhraseInfoCircuitSpecifique(Context c, String _nomSocieteTransport, String infoCircuitCode)
 	{
-		return StringDeMapAvecCleSpecifique(getRootPath() + _nomSocieteTransport + "/" + "listeextrainfocircuit.dba", infoCircuitCode);
+		return StringDeMapAvecCleSpecifique(getRootPath(c) + _nomSocieteTransport + "/" + "listeextrainfocircuit.dba", infoCircuitCode);
 	}
 	
 	
@@ -476,13 +493,13 @@ public class TransportProvider
 	 * @param _nomSocieteTransport
 	 * @return
 	 */
-	public static HashMap<String, String> ObtenirMapNomCircuit(String _nomSocieteTransport)
+	public static HashMap<String, String> ObtenirMapNomCircuit(Context c, String _nomSocieteTransport)
 	{
 		HashMap<String, String> vAutobus = new HashMap<String, String>();
 
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath() + _nomSocieteTransport + "/listecircuit.dba");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(getRootPath(c) + _nomSocieteTransport + "/listecircuit.dba");
 			String strLine = in.readLine();
 			while (strLine != null)
 			{
@@ -507,14 +524,14 @@ public class TransportProvider
 	 * @param _nomSocieteTransport
 	 * @return Une map de l'extra enfo du reseau demand�
 	 */
-	public static HashMap<String, String> ObtenirPhraseInfoHoraire(String _nomSocieteTransport)
+	public static HashMap<String, String> ObtenirPhraseInfoHoraire(Context c, String _nomSocieteTransport)
 	{
-		return obtenirHashMapFichier(getRootPath() + _nomSocieteTransport + "/" + "listeextrainfohoraire.dba");
+		return obtenirHashMapFichier(getRootPath(c) + _nomSocieteTransport + "/" + "listeextrainfohoraire.dba");
 	}
 	
-		public static HashMap<String, String> ObtenirPhraseInfoCircuit(String _nomSocieteTransport)
+	public static HashMap<String, String> ObtenirPhraseInfoCircuit(Context c, String _nomSocieteTransport)
 	{
-		return obtenirHashMapFichier(getRootPath() + _nomSocieteTransport + "/" + "listeextrainfocircuit.dba");
+		return obtenirHashMapFichier(getRootPath(c) + _nomSocieteTransport + "/" + "listeextrainfocircuit.dba");
 	}
 
 	/**
@@ -522,15 +539,15 @@ public class TransportProvider
 	 * @param _nomSocieteTransport
 	 * @return Une map de la correspondance jour f�ri�-date du reseau demand�
 	 */
-	public static HashMap<String, String> ObtenirMapJourFerie(String _nomSocieteTransport)
+	public static HashMap<String, String> ObtenirMapJourFerie(Context c, String _nomSocieteTransport)
 	{
-		return obtenirHashMapFichier(getRootPath() + _nomSocieteTransport + "/" + "feries.dba");
+		return obtenirHashMapFichier(getRootPath(c) + _nomSocieteTransport + "/" + "feries.dba");
 	}
 
 
-	public static HashMap<String, String> ObtenirPhraseInfoDirection(String _nomSocieteTransport)
+	public static HashMap<String, String> ObtenirPhraseInfoDirection(Context c, String _nomSocieteTransport)
 	{
-		return obtenirHashMapFichier(getRootPath() + _nomSocieteTransport + "/" + "listeextrainfodirection.dba");
+		return obtenirHashMapFichier(getRootPath(c) + _nomSocieteTransport + "/" + "listeextrainfodirection.dba");
 	}
 
 	

@@ -42,13 +42,13 @@ public class ListeCircuitDlg extends ListActivityWithMenu implements OnItemClick
 
 		m_NomTransport = b.getString(TypeString.SOCIETECODE);
 
-		Vector<Autobus> vListeCircuit = TransportProvider.ObtenirListeCircuit(m_NomTransport);
+		Vector<Autobus> vListeCircuit = TransportProvider.ObtenirListeCircuit(this, m_NomTransport);
 		if (vListeCircuit.size() != 0)
 		{
 			this.setTitle(getResources().getString(R.string.ListeCircuitDlg_Liste_de_circuit_pour) + " " + m_NomTransport.toUpperCase());
 			Iterator<Autobus> iter = vListeCircuit.iterator();
-			HashMap<String, String> mapInfoDirectionPhrase = TransportProvider.ObtenirPhraseInfoDirection(m_NomTransport);
-			HashMap<String, String> mapInfoCircuitPhrase = TransportProvider.ObtenirPhraseInfoCircuit(m_NomTransport);
+			HashMap<String, String> mapInfoDirectionPhrase = TransportProvider.ObtenirPhraseInfoDirection(this, m_NomTransport);
+			HashMap<String, String> mapInfoCircuitPhrase = TransportProvider.ObtenirPhraseInfoCircuit(this, m_NomTransport);
 			String LastBus = "";
 			HashMap<String, String> item = null;
 			int colors[] = new int[vListeCircuit.size()];

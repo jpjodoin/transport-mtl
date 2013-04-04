@@ -204,9 +204,9 @@ public class UpdateManager
 		}
 	}
 
-	public void GetDatabase(Vector<String> strNameArray)
+	public void GetDatabase(Context c, Vector<String> strNameArray)
 	{
-
+		final Context fContext = c;
 		m_strNameArray = strNameArray;
 		// m_strName=strName;
 		m_State = m_Dialog.GetState();
@@ -220,7 +220,7 @@ public class UpdateManager
 				for (String transportName: m_strNameArray)
 				{
 					// Make Folder for Update
-					File RootFolder = new File(TransportProvider.getRootPath() + "");
+					File RootFolder = new File(TransportProvider.getRootPath(fContext) + "");
 					RootFolder.mkdir();
 
 					HttpClient httpClient = new DefaultHttpClient();
@@ -274,7 +274,7 @@ public class UpdateManager
 								if (totalreadedBytes > 0)
 								{
 
-									WriteLock(transportName); // D�but de
+									WriteLock(fContext, transportName); // D�but de
 																// l'extraction
 									InputStream fis = new ByteArrayInputStream(file_buffer, 0, filelength);
 
@@ -310,13 +310,13 @@ public class UpdateManager
 										int count;
 										if (strFileName.charAt(strFileName.length() - 1) == '/')
 										{
-											File folder = new File(TransportProvider.getRootPath() + strFileName);
+											File folder = new File(TransportProvider.getRootPath(fContext) + strFileName);
 											folder.mkdir();
 										} else
 										{
 											byte data[] = new byte[2048];
 											// write the files to the disk
-											FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath() + strFileName);
+											FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath(fContext) + strFileName);
 											dest = new BufferedOutputStream(fos, 2048);
 											while ((count = zin.read(data, 0, 2048)) != -1)
 											{
@@ -328,7 +328,7 @@ public class UpdateManager
 										}
 									}
 									zin.close();
-									RemoveLock();
+									RemoveLock(fContext);
 								}
 							}
 
@@ -356,9 +356,9 @@ public class UpdateManager
 					}
 					if (m_State != UpdateState.ERREUR)
 					{
-						TransportServiceInfo service = TransportProvider.ObtenirTransportService(transportName);
+						TransportServiceInfo service = TransportProvider.ObtenirTransportService(fContext, transportName);
 						if(service != null)
-							ListeSocieteManager.ajouterSociete(service);
+							ListeSocieteManager.ajouterSociete(fContext, service);
 						else
 						{
 							m_State = UpdateState.ERREUR;
@@ -384,7 +384,7 @@ public class UpdateManager
 					mHandler.post(mUpdateResults);
 					try
 					{
-						FavorisManager.updateFavoris(m_strNameArray);
+						FavorisManager.updateFavoris(fContext, m_strNameArray);
 					} catch (Exception e)
 					{
 						m_ErrorString = m_ApplicationContext.getResources().getString(R.string.UpdateManager_Echec_mise_a_jour_Favoris) + ": " + e.getMessage();
@@ -408,13 +408,13 @@ public class UpdateManager
 		runningThread.start();
 	}
 
-	public static String ReadLock()
+	public static String ReadLock(Context c)
 	{
 		String result = null;
 
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "Lock.conf");
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "Lock.conf");
 			if (in != null)
 			{
 				result = in.readLine();
@@ -428,11 +428,11 @@ public class UpdateManager
 		return result;
 	}
 
-	static void WriteLock(String transportLocked)
+	static void WriteLock(Context c, String transportLocked)
 	{
 		try
 		{
-			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "Lock.conf", true), "8859_1");
+			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath(c) + "Lock.conf", true), "8859_1");
 			out.write(transportLocked);
 			out.close();
 
@@ -449,11 +449,11 @@ public class UpdateManager
 		}
 	}
 
-	public static void RemoveLock()
+	public static void RemoveLock(Context c)
 	{
 		try
 		{
-			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "Lock.conf", false), "8859_1");
+			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath(c) + "Lock.conf", false), "8859_1");
 			out.write("");
 			out.close();
 

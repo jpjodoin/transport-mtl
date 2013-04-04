@@ -34,18 +34,18 @@ public class FavorisManager
 {
 	final public static short	nombreHoraireParLigne	= 3;
 	final public static short FavorisCurrentVersion = 1;
-	public static Message ajouterFavoris(/*String strTransportService, String strAutobus, String strDirection, String strArret, String strIntersection, long nLigneFavoris, String codeExtraInfo*/Favoris favoris)
+	public static Message ajouterFavoris(Context c, Favoris favoris)
 	{
 		Message retour = new Message(false, R.string.Horaire_ajout_favoris_nok);
 		try
 		{
 			// On v�rifie si le fichier existe.
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8*512 char
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "favoris.dba", 4096);// 8*512 char
 			if (in != null)
 			{
 				String favorisAAJouter = favoris.Serialize();//= strTransportService + ";" + strAutobus + ";" + strDirection + ";" + strArret + ";" + strIntersection + ";" + nLigneFavoris + ";" + codeExtraInfo;
 				in.close();
-				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "favoris.dba", true), "8859_1");
+				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath(c) + "favoris.dba", true), "8859_1");
 				out.write(favorisAAJouter);
 				out.close();
 				retour = new Message(true, R.string.Horaire_ajout_favoris_ok);
@@ -75,7 +75,7 @@ public class FavorisManager
 		BufferedFileReader in;
 		try
 		{
-			in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8			
+			in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(context) + "favoris.dba", 4096);// 8			
 			if (in != null)
 			{
 				String strLine = in.readLine();
@@ -140,10 +140,10 @@ public class FavorisManager
 		return strLine;
 	}
 	//Todo: Add id
-	public static String SerializeBookmarkHeader(Favoris f)
+	public static String SerializeBookmarkHeader(Context c, Favoris f)
 	{
 		StringBuilder sb = new StringBuilder(512);
-		sb.append(f.m_strTransportService).append(';').append(f.m_strNoBus).append(';').append(f.m_codeInfoDirection.equals("null") ? " " : TransportProvider.ObtenirPhraseInfoDirectionSpecifique(f.m_strTransportService, f.m_codeInfoDirection)).append(';').append(f.m_strNoArret).append(';').append(f.m_strIntersection);
+		sb.append(f.m_strTransportService).append(';').append(f.m_strNoBus).append(';').append(f.m_codeInfoDirection.equals("null") ? " " : TransportProvider.ObtenirPhraseInfoDirectionSpecifique(c, f.m_strTransportService, f.m_codeInfoDirection)).append(';').append(f.m_strNoArret).append(';').append(f.m_strIntersection);
 		return sb.toString();
 	}
 	
@@ -163,26 +163,26 @@ public class FavorisManager
 	
 
 	
-	public static boolean updateFavoris(ArrayList<FavorisNode> bookmarkList)
+	public static boolean updateFavoris(Context c, ArrayList<FavorisNode> bookmarkList)
 	{
 		boolean result = false;
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "favoris.dba", 4096);// 8
 																																		// *
 																																		// 512caracteres
 			if (in != null)
 			{
 				//String strLine = in.readLine();
-				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "favorisTemp.dba", false), "8859_1");
+				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath(c) + "favorisTemp.dba", false), "8859_1");
 				for(FavorisNode bookmark : bookmarkList)
 				{
 					out.write(bookmark.Serialize());
 				}				
 				in.close();
 				out.close();
-				File ancienFavoris = new File(TransportProvider.getRootPath() + "favoris.dba");
-				File nouveauFavoris = new File(TransportProvider.getRootPath() + "favorisTemp.dba");
+				File ancienFavoris = new File(TransportProvider.getRootPath(c) + "favoris.dba");
+				File nouveauFavoris = new File(TransportProvider.getRootPath(c) + "favorisTemp.dba");
 				result = nouveauFavoris.renameTo(ancienFavoris) ? true : false;
 				in.close();
 			}
@@ -200,21 +200,21 @@ public class FavorisManager
 	 * Supprime les favoris totalement.
 	 * 
 	 */
-	public static int supprimerFichierFavoris()
+	public static int supprimerFichierFavoris(Context c)
 	{
-		File favoris = new File(TransportProvider.getRootPath() + "favoris.dba");
+		File favoris = new File(TransportProvider.getRootPath(c) + "favoris.dba");
 		return favoris.delete() ? R.string.SupprimerTousFavorisOk : R.string.SupprimerTousFavorisNOk;
 	}
 
-	public static void supprimerFavorisSociete(Vector<String> shortName)
+	public static void supprimerFavorisSociete(Context c, Vector<String> shortName)
 	{
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "favoris.dba", 4096);
 			if (in != null)
 			{
 				String strLine = in.readLine();
-				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath() + "favorisTemp.dba", false), "8859_1");
+				OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(TransportProvider.getRootPath(c) + "favorisTemp.dba", false), "8859_1");
 				boolean toDelete = false;
 				while (strLine != null)
 				{
@@ -240,8 +240,8 @@ public class FavorisManager
 
 					strLine = in.readLine();
 				}
-				File ancienFavoris = new File(TransportProvider.getRootPath() + "favoris.dba");
-				File nouveauFavoris = new File(TransportProvider.getRootPath() + "favorisTemp.dba");
+				File ancienFavoris = new File(TransportProvider.getRootPath(c) + "favoris.dba");
+				File nouveauFavoris = new File(TransportProvider.getRootPath(c) + "favorisTemp.dba");
 				nouveauFavoris.renameTo(ancienFavoris);
 				in.close();
 				out.close();
@@ -260,12 +260,12 @@ public class FavorisManager
 			switch(currentFavorisVersion)
 			{
 			case 0:
-				supprimerFichierFavoris();	//�craser fichier de favoris en cas d'�chec
+				supprimerFichierFavoris(context);	//�craser fichier de favoris en cas d'�chec
 				currentFavorisVersion = 1;
 				break;
 			
 			default:
-				supprimerFichierFavoris();	//�craser fichier de favoris en cas d'�chec
+				supprimerFichierFavoris(context);	//�craser fichier de favoris en cas d'�chec
 				currentFavorisVersion = 1;				
 			}
 			
@@ -281,7 +281,7 @@ public class FavorisManager
 	}
 	
 	
-	static void updateFavoris(Vector<String> strNameArray) throws IOException
+	static void updateFavoris(Context c, Vector<String> strNameArray) throws IOException
 	{
 		String[] strArray;
 		HashSet<String> strNameMap = new HashSet<String>(strNameArray.size());
@@ -292,14 +292,14 @@ public class FavorisManager
 		}
 		try
 		{
-			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "favoris.dba", 4096);// 8
+			BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "favoris.dba", 4096);// 8
 																																		// *
 																																		// 512caracteres
 			if (in != null)
 			{
 				String strLine = in.readLine();
 
-				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath() + "favorisTemp.dba", false);
+				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath(c) + "favorisTemp.dba", false);
 				OutputStreamWriter out = new OutputStreamWriter(fos, "8859_1");
 
 
@@ -311,7 +311,7 @@ public class FavorisManager
 						strArray = strLine.split(";");
 						if (strArray.length == 9 && strNameMap.contains(strArray[1])) // On doit mettre � jour
 						{
-							arret = TransportProvider.ObtenirUnArret(strArray[1], strArray[2], strArray[8], strArray[3], strArray[7], strArray[4]);
+							arret = TransportProvider.ObtenirUnArret(c, strArray[1], strArray[2], strArray[8], strArray[3], strArray[7], strArray[4]);
 							if(arret != null)
 							{
 								Favoris f = new Favoris();
@@ -323,7 +323,7 @@ public class FavorisManager
 								f.m_nLigneFavoris = Long.parseLong(arret.ObtenirPositionDansFichier());
 								f.m_codeInfoDirection = strArray[7];
 								f.m_codeInfoCircuit = strArray[8];
-								f.m_vHoraire = TransportProvider.ObtenirListeHorairePourUnAutobus(f.m_strTransportService, f.m_strNoBus,  f.m_strDirection, f.m_codeInfoDirection, f.m_strNoArret, f.m_nLigneFavoris, f.m_codeInfoCircuit);
+								f.m_vHoraire = TransportProvider.ObtenirListeHorairePourUnAutobus(c, f.m_strTransportService, f.m_strNoBus,  f.m_strDirection, f.m_codeInfoDirection, f.m_strNoArret, f.m_nLigneFavoris, f.m_codeInfoCircuit);
 								if(f.m_vHoraire != null)
 								{
 									out.write(f.Serialize());
@@ -362,8 +362,8 @@ public class FavorisManager
 				in.close();
 				out.close();
 				// Swappage du nouveau fichier des favoris
-				File ancienFavoris = new File(TransportProvider.getRootPath() + "favoris.dba");
-				File nouveauFavoris = new File(TransportProvider.getRootPath() + "favorisTemp.dba");
+				File ancienFavoris = new File(TransportProvider.getRootPath(c) + "favoris.dba");
+				File nouveauFavoris = new File(TransportProvider.getRootPath(c) + "favorisTemp.dba");
 				nouveauFavoris.renameTo(ancienFavoris);
 			}
 

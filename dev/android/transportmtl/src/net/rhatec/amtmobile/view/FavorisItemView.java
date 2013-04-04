@@ -47,7 +47,7 @@ public class FavorisItemView extends RelativeLayout
 		reseauTransport.setText(f.m_strTransportService);
 
 		TextView directionInfoPhrase = (TextView) findViewById(R.id.ExtraInfo);
-		directionInfoPhrase.setText(f.m_codeInfoDirection.equals("null") ? " " : to+" : "+ TransportProvider.ObtenirPhraseInfoDirectionSpecifique(f.m_strTransportService, f.m_codeInfoDirection));
+		directionInfoPhrase.setText(f.m_codeInfoDirection.equals("null") ? " " : to+" : "+ TransportProvider.ObtenirPhraseInfoDirectionSpecifique(context, f.m_strTransportService, f.m_codeInfoDirection));
 
 		TextView NoArretListTxt = (TextView) findViewById(R.id.NoArretListTxt);
 		NoArretListTxt.setText(f.m_strNoArret);

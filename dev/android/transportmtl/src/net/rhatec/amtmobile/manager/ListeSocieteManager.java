@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Vector;
 
+import android.content.Context;
+
 import net.rhatec.amtmobile.file.BufferedFileReader;
 import net.rhatec.amtmobile.helpers.FileHelpers;
 import net.rhatec.amtmobile.providers.TransportProvider;
@@ -17,10 +19,10 @@ public class ListeSocieteManager
 {
 	// TODO: faire des m�thodes g�n�ral pour �a et favoris
 
-	public static Vector<TransportServiceBase> obtenirListe()
+	public static Vector<TransportServiceBase> obtenirListe(Context c)
 	{
 		Vector<TransportServiceBase> transportVector = new Vector<TransportServiceBase>(10);
-		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "listetransport.dba", 512);// 8
+		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "listetransport.dba", 512);// 8
 		int numCorrupted = 0;	
 		String corruptedName = null;
 	
@@ -50,16 +52,16 @@ public class ListeSocieteManager
 				{
 					if(numCorrupted == 1)
 					{
-						supprimerSociete(corruptedName);
+						supprimerSociete(c, corruptedName);
 						Vector<String> v = new Vector<String>(1);
 						v.add(corruptedName);
-						FavorisManager.supprimerFavorisSociete(v);
-						FileManager.deleteDir(TransportProvider.getRootPath() + corruptedName + "/");
+						FavorisManager.supprimerFavorisSociete(c, v);
+						FileManager.deleteDir(TransportProvider.getRootPath(c) + corruptedName + "/");
 
 					}
 					else
 					{
-						FileManager.deleteDir(TransportProvider.getRootPath());
+						FileManager.deleteDir(TransportProvider.getRootPath(c));
 						transportVector.clear();
 						
 					}
@@ -73,19 +75,19 @@ public class ListeSocieteManager
 		return transportVector;
 	}
 
-	public static void ajouterSociete(TransportServiceBase _service)
+	public static void ajouterSociete(Context c, TransportServiceBase _service)
 	{
 
 		boolean found = false;
-		FileManager.creerFichierSiExistePas(TransportProvider.getRootPath() + "listetransport.dba");
-		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "listetransport.dba", 512);// 8
+		FileManager.creerFichierSiExistePas(TransportProvider.getRootPath(c) + "listetransport.dba");
+		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "listetransport.dba", 512);// 8
 		// *
 		// 512carcateres
 		try
 		{
 			if (in != null)
 			{
-				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath() + "listetransportTemp.dba", false);
+				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath(c) + "listetransportTemp.dba", false);
 				OutputStreamWriter out = new OutputStreamWriter(fos, "8859_1");
 				String strLine = in.readLine();
 				while (strLine != null)
@@ -107,8 +109,8 @@ public class ListeSocieteManager
 					out.write(_service.serialize() + "\n");  //Nul ptr possible
 				}
 				out.close();
-				File ancienListeTransport = new File(TransportProvider.getRootPath() + "listetransport.dba");
-				File nouveauListeTransport = new File(TransportProvider.getRootPath() + "listetransportTemp.dba");
+				File ancienListeTransport = new File(TransportProvider.getRootPath(c) + "listetransport.dba");
+				File nouveauListeTransport = new File(TransportProvider.getRootPath(c) + "listetransportTemp.dba");
 				nouveauListeTransport.renameTo(ancienListeTransport);
 				System.out.println("Transport Society Successfully added !");
 			}
@@ -123,17 +125,17 @@ public class ListeSocieteManager
 
 	}
 
-	public static void supprimerSociete(String _nomCourt)
+	public static void supprimerSociete(Context c, String _nomCourt)
 	{
-		FileManager.creerFichierSiExistePas(TransportProvider.getRootPath() + "listetransport.dba");
-		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath() + "listetransport.dba", 512);// 8
+		FileManager.creerFichierSiExistePas(TransportProvider.getRootPath(c) + "listetransport.dba");
+		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(TransportProvider.getRootPath(c) + "listetransport.dba", 512);// 8
 																																		// *
 																																		// 512carcateres
 		try
 		{
 			if (in != null)
 			{
-				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath() + "listetransportTemp.dba", false);
+				FileOutputStream fos = new FileOutputStream(TransportProvider.getRootPath(c) + "listetransportTemp.dba", false);
 				OutputStreamWriter out = new OutputStreamWriter(fos, "8859_1");
 				String strLine = in.readLine();
 				while (strLine != null)
@@ -145,8 +147,8 @@ public class ListeSocieteManager
 					strLine = in.readLine();
 				}
 				out.close();
-				File ancienListeTransport = new File(TransportProvider.getRootPath() + "listetransport.dba");
-				File nouveauListeTransport = new File(TransportProvider.getRootPath() + "listetransportTemp.dba");
+				File ancienListeTransport = new File(TransportProvider.getRootPath(c) + "listetransport.dba");
+				File nouveauListeTransport = new File(TransportProvider.getRootPath(c) + "listetransportTemp.dba");
 				nouveauListeTransport.renameTo(ancienListeTransport);
 				System.out.println("Transport Society Successfully delete !");
 			}

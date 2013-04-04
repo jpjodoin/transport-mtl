@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -59,7 +60,7 @@ public class MainDlg extends Activity implements EulaManager.OnEulaAgreedTo
 			
 			
 			
-			m_TransportLock = UpdateManager.ReadLock(); // En cas de corruption de la base de donn�e lors de la mise � jour, il y aura un nom
+			m_TransportLock = UpdateManager.ReadLock(this); // En cas de corruption de la base de donn�e lors de la mise � jour, il y aura un nom
 			if (m_TransportLock != null)
 			{
 				m_Dialog = ProgressDialog.show(this, "",
@@ -90,15 +91,16 @@ public class MainDlg extends Activity implements EulaManager.OnEulaAgreedTo
 
 	void RemoveLock()
 	{
+		final Context c = this;
 		Thread runningThread = new Thread() {
 			@Override
 			public void run()
 			{
 				m_StateProgress = 0;
 				mHandler.post(mUpdateStatusDBA);
-				ListeSocieteManager.supprimerSociete(m_TransportLock);
-				FileManager.deleteDir(TransportProvider.getRootPath() + m_TransportLock);
-				UpdateManager.RemoveLock();
+				ListeSocieteManager.supprimerSociete(c,m_TransportLock);
+				FileManager.deleteDir(TransportProvider.getRootPath(c) + m_TransportLock);
+				UpdateManager.RemoveLock(c);
 				m_StateProgress = 1;
 				mHandler.post(mUpdateStatusDBA);
 			}

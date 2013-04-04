@@ -39,8 +39,7 @@ public class RechercheArretDlg extends ActivityWithMenu implements
 		super.onCreate(savedInstanceState);
 		Bundle b = this.getIntent().getExtras();
 		m_TransportName = b.getString(TypeString.SOCIETECODE);
-		TransportServiceInfo currentService = TransportProvider
-				.ObtenirTransportService(m_TransportName);
+		TransportServiceInfo currentService = TransportProvider.ObtenirTransportService(this, m_TransportName);
 		if (currentService != null) {
 			String finValidite = b.getString(TypeString.FINVALIDITESOCIETE);
 			currentService.setFinValidite(finValidite);
@@ -173,8 +172,7 @@ public class RechercheArretDlg extends ActivityWithMenu implements
 		if (busNumberStr.length() <= 3
 				&& busNumberStr.contentEquals("") == false) {
 			// TODO finir l'implementation de la recherche de circuit
-			Vector<Autobus> vAutobus = TransportProvider
-					.ObtenirListeCircuitParNumero(m_TransportName, busNumberStr);
+			Vector<Autobus> vAutobus = TransportProvider.ObtenirListeCircuitParNumero(this, m_TransportName, busNumberStr);
 
 			if (vAutobus.size() != 0) {
 				Intent iHoraire = new Intent(this, AccesCircuitDlg.class);
@@ -188,10 +186,8 @@ public class RechercheArretDlg extends ActivityWithMenu implements
 				StringBuffer infoCircuitCodeArrayBuffer = new StringBuffer();
 				StringBuffer infoCircuitPhraseArrayBuffer = new StringBuffer();
 				StringBuffer nomAutobusArrayBuffer = new StringBuffer();
-				HashMap<String, String> mapInfoDirection = TransportProvider
-						.ObtenirPhraseInfoDirection(m_TransportName);
-				HashMap<String, String> mapInfoCircuit = TransportProvider
-						.ObtenirPhraseInfoCircuit(m_TransportName);
+				HashMap<String, String> mapInfoDirection = TransportProvider.ObtenirPhraseInfoDirection(this, m_TransportName);
+				HashMap<String, String> mapInfoCircuit = TransportProvider.ObtenirPhraseInfoCircuit(this, m_TransportName);
 				for (Autobus autobus : vAutobus) {
 					nomAutobusArrayBuffer.append(autobus.ObtenirNom() + ";");
 					directionArrayBuffer.append(autobus.ObtenirDirectionCode()

@@ -105,7 +105,7 @@ public class TransportSelectDlg extends ListActivityWithMenu implements OnItemCl
 	
 	private void populateListWithAvailableTransport()
 	{
-		Vector<TransportServiceBase> transportVector = ListeSocieteManager.obtenirListe();
+		Vector<TransportServiceBase> transportVector = ListeSocieteManager.obtenirListe(this);
 		for(TransportServiceBase t:transportVector)
 		{
 			if (!t.isValid(m_dateCourante))
@@ -124,7 +124,7 @@ public class TransportSelectDlg extends ListActivityWithMenu implements OnItemCl
 
 		String transportService = m_Liste.get(position).get(TypeString.SOCIETECODE);
 		Bundle b = new Bundle();
-		if (TransportProvider.DatabaseExist(transportService))
+		if (TransportProvider.DatabaseExist(this, transportService))
 		{
 			Intent iArret = new Intent(this, RechercheArretDlg.class);
 			b.putString(TypeString.SOCIETECODE, transportService);

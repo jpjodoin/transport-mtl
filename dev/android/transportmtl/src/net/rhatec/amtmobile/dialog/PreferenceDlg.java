@@ -13,6 +13,7 @@ import net.rhatec.amtmobile.tasks.DeleteFolderTask;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -77,11 +78,12 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 			AlertDialog.Builder builder = new AlertDialog.Builder(preference.getContext());
 			builder.setTitle(R.string.PreferenceDlg_Confirmation_ResetAll_Title);
 			builder.setCancelable(true);
+			final Context c = this;
 			builder.setPositiveButton(R.string.PreferenceDlg_Confirmation_ResetAll_Pos, new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which)
 				{
-					DeleteFolderTask t = new DeleteFolderTask(TransportProvider.getRootPath());
+					DeleteFolderTask t = new DeleteFolderTask(TransportProvider.getRootPath(c));
 					ModalWaitDialog d = new ModalWaitDialog();
 					d.runTask(preference.getContext(), getResources().getString(R.string.PreferenceDlg_remise_a_zero_favoris_patienter), t);
 				}
@@ -105,7 +107,7 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 
 		} else if (preference.getKey().equals("effFavoris"))
 		{
-			Toast.makeText(getBaseContext(), FavorisManager.supprimerFichierFavoris(), Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(), FavorisManager.supprimerFichierFavoris(this), Toast.LENGTH_LONG).show();
 		} else if (preference.getKey().equals("resetDba"))
 		{
 			startActivity(new Intent(this, SupprimerDBADlg.class));
@@ -136,7 +138,7 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 	}
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-	// Créations des boutons du menu
+	// Crï¿½ations des boutons du menu
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	/** hook into menu button for activity */
 	@Override

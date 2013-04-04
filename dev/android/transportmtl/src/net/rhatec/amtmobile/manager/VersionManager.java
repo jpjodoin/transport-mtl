@@ -26,7 +26,7 @@ public class VersionManager
 	public static void loadVersionFromFile(Context c)
 	{
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
-	    File f = new File(TransportProvider.getRootPath()+"version.dba");
+	    File f = new File(TransportProvider.getRootPath(c)+"version.dba");
 		if(f.exists())
 		{
 			preferences.edit().putInt(VersionObjectType.BOOKMARKS_VERSION.getKeyName(), 1);
@@ -34,7 +34,7 @@ public class VersionManager
 			f.delete();
 		}
 		
-		ArrayList<Pair<String, String>> list = TransportProvider.obtenirArrayListFichierMap(TransportProvider.getRootPath() +FILENAME);
+		ArrayList<Pair<String, String>> list = TransportProvider.obtenirArrayListFichierMap(TransportProvider.getRootPath(c) +FILENAME);
 		for(Pair<String,String> p : list)
 		{
 			preferences.edit().putInt(p.first, Integer.valueOf(p.second));
@@ -44,7 +44,7 @@ public class VersionManager
 	
 	public static void upgradeIfNeeded(Context c)
 	{
-		File RootFolder = new File(TransportProvider.getRootPath());
+		File RootFolder = new File(TransportProvider.getRootPath(c));
 		RootFolder.mkdir();
 		int currentAppDBAVersion = VersionObjectType.DATABASE_VERSION.getCurrentAppVersion();
 		int currentDBAVersion = getCurrentDbaVersion(VersionObjectType.DATABASE_VERSION, c);
@@ -72,7 +72,7 @@ public class VersionManager
 	public static void setVersion(VersionObjectType type, int version, Context c)
 	{
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
-		String filePath = TransportProvider.getRootPath() + FILENAME;
+		String filePath = TransportProvider.getRootPath(c) + FILENAME;
 		
 		preferences.edit().putInt(type.getKeyName(), version).commit();
 		BufferedFileReader in = FileHelpers.createBufferedFileInputStream(filePath);

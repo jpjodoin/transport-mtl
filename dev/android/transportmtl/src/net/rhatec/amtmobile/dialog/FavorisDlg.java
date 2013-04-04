@@ -168,7 +168,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 				if(fn.getType() == FavorisType.Favoris)
 				{
 					Favoris f = (Favoris) fn;
-					bookmarkList.add(FavorisManager.SerializeBookmarkHeader(f));
+					bookmarkList.add(FavorisManager.SerializeBookmarkHeader(this, f));
 					
 				}
 			}
@@ -218,7 +218,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 			}
 			m_List.removeAll(toRemove);			
 			m_List.add(newBookmarkGroup);
-			FavorisManager.updateFavoris(m_List);
+			FavorisManager.updateFavoris(this, m_List);
 			reafficherListe();
 		}
 		else if(resultCode == 2) //Edit
@@ -271,7 +271,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 			int newGIdx = nodeList.indexOf(fn);
 			nodeList.set(newGIdx, fg);
 			m_List = nodeList;		
-			FavorisManager.updateFavoris(m_List);
+			FavorisManager.updateFavoris(this, m_List);
 			reafficherListe();
 			
 			
@@ -340,7 +340,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 	
 	public void updateAndSaveList()
 	{
-		FavorisManager.updateFavoris(m_List);
+		FavorisManager.updateFavoris(this, m_List);
 		reafficherListe();
 	}
 
@@ -388,7 +388,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 		        		ArrayList<Favoris> bookmarkListGroup = group.obtenirFavoris();
 		        		for( Favoris f : bookmarkListGroup)
 		    			{
-	    					serializedBookmarkList.add(FavorisManager.SerializeBookmarkHeader(f));    	
+	    					serializedBookmarkList.add(FavorisManager.SerializeBookmarkHeader(context, f));    	
 		    			}
 		        		int nbUsed = serializedBookmarkList.size();
 		    			for( FavorisNode fn : m_List)
@@ -396,7 +396,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 		    				if(fn.getType() == FavorisType.Favoris)
 		    				{
 		    					Favoris f = (Favoris) fn;
-		    					serializedBookmarkList.add(FavorisManager.SerializeBookmarkHeader(f));	
+		    					serializedBookmarkList.add(FavorisManager.SerializeBookmarkHeader(context, f));	
 		    				}
 		    			}
 		    			b.putString(TypeString.GROUPNAME, group.obtenirNom());
