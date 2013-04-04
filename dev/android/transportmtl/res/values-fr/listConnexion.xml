@@ -20,15 +20,26 @@
         <item>bookmarks</item>
 </array>
 
+
 <array name="storageString">
-        <item>Externe</item>
-        <item>Interne</item>
+     	<item>Interne (flash)</item>
+        <item>Externe (sdcard)</item>       
+        <item>Externe 2 (extSdCard)</item>
 </array>
-<array name="storageValue">
-        <item>external</item>
+<array name="storageValue">        
         <item>internal</item>
+        <item>external</item>
+        <item>external2</item>
 </array>
 
+<array name="storageStringNoExt">
+     	<item>Interne</item>
+        <item>Externe</item>       
+</array>
+<array name="storageValueNoExt">        
+        <item>internal</item>
+        <item>external</item>
+</array>
 
 
 

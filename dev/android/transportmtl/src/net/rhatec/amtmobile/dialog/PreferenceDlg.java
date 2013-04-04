@@ -1,5 +1,6 @@
 package net.rhatec.amtmobile.dialog;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,6 +19,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
@@ -63,7 +65,15 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 
 		Preference removeNotification = findPreference("removeNotification");
 		removeNotification.setOnPreferenceClickListener(this);
-
+		
+		ListPreference sortBy = (ListPreference) findPreference("storage");
+		//On affiche l'option sdExtCard seulement si il y un point de montage extSdCard
+		File f = new File("/extSdCard");
+		if(f.exists() && f.isDirectory())
+		{
+			sortBy.setEntries(getResources().getStringArray(R.array.storageString));
+            sortBy.setEntryValues(getResources().getStringArray(R.array.storageValue));
+		}
 	}
 
 	@Override

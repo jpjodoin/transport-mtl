@@ -21,11 +21,23 @@
 </array>
 
 <array name="storageString">
-        <item>External</item>
-        <item>Internal</item>
+     	<item>Internal (flash)</item>
+        <item>External (sdcard)</item>       
+        <item>External 2 (extSdCard)</item>
 </array>
-<array name="storageValue">
-        <item>external</item>
+<array name="storageValue">        
         <item>internal</item>
+        <item>external</item>
+        <item>external2</item> 
 </array>
+
+<array name="storageStringNoExt">
+     	<item>Internal</item>
+        <item>External</item>       
+</array>
+<array name="storageValueNoExt">        
+        <item>internal</item>
+        <item>external</item>
+</array>
+
 </resources>

@@ -1,5 +1,6 @@
 package net.rhatec.amtmobile.dialog;
 
+import java.io.File;
 import java.util.Vector;
 
 import net.rhatec.amtmobile.R;
@@ -222,11 +223,12 @@ public class MiseAJourDlg extends ActivityWithMenu implements OnClickListener
 		TextView lblSDCard = (TextView) findViewById(R.id.lblSDCardDetection);
 		TextView lblError = (TextView) findViewById(R.id.lblError);
 
-
-		if (PreferenceManager.getDefaultSharedPreferences(this).getString("storage", "external").equals("internal"))
+		String storagePreference = PreferenceManager.getDefaultSharedPreferences(this).getString("storage", "external");
+			
+		if (storagePreference.equals("internal"))
 		{
 			lblSDCard.setText("");
-		}		
+		}				
 		else if (!android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
 		{
 			lblSDCard.setText(getResources().getString(R.string.MiseAJourDlg_Carte_SD_absente));

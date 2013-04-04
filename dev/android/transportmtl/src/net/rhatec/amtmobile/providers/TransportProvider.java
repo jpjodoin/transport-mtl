@@ -35,6 +35,10 @@ public class TransportProvider
 		{
 			rootPath = c.getFilesDir().getAbsolutePath();
 		}
+		else if(pref.equals("external2"))
+		{
+			rootPath = "/extSdCard";
+		}
 		else //external
 		{			
 			rootPath = Environment.getExternalStorageDirectory().getAbsolutePath();
