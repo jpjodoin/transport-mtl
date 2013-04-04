@@ -12,6 +12,7 @@
 #include "HoraireHelpers.h"
 #include "ArretGTFS.h"
 #include "HoraireGTFS.h"
+#include <set>
 
 /*DatabaseCreator* getNewDatabaseCreator(std::map<std::string, std::string> configMap) 
 {	
@@ -93,12 +94,21 @@ void GTFSDatabaseCreator::GetData()
 			for (std::vector<Horaire*>::iterator horaireIt = vHoraire->begin(); horaireIt != vHoraire->end(); ++horaireIt)
 			{
 				std::vector<unsigned int>& vHeure = (*horaireIt)->ObtenirVecteurHeure();
+				//Remove duplicate time	
+				
 				std::sort(vHeure.begin(), vHeure.end(), AscendingHoraireTimeSort());
-				for (unsigned t=0; t<vHeure.size(); ++t)
-				{
-					vHeure.at(t) = vHeure.at(t)%2400; //We do not support our flags at the moment
-				}
+				int lastTime=-1;
 
+				std::vector<unsigned int> sortedHeure;
+
+				for (int t=0; t<vHeure.size(); ++t)
+				{
+					int time = vHeure.at(t)%2400; 
+					if(time != lastTime)
+						sortedHeure.push_back(time);
+					lastTime = time;
+				}
+				vHeure = sortedHeure;
 			}
 			nomDernierArret = arretCourant->ObtenirNomIntersection1() + ((arretCourant->ObtenirNomIntersection2() == "" )? "" : (" / " + arretCourant->ObtenirNomIntersection2()));
 		}

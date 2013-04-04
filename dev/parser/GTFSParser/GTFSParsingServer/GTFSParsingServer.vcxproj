@@ -148,9 +148,6 @@ xcopy .\..\db  .\db /S /I /Y</Command>
     <ClInclude Include="include\HoraireGTFS.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\vsprops\Utils.vsprops" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.vcxproj">
       <Project>{7b196868-aa70-4b94-98a9-f9bc3731fadc}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

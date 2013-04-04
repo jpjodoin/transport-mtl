@@ -45,7 +45,4 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\vsprops\Utils.vsprops" />
-  </ItemGroup>
 </Project>

@@ -1,0 +1,79 @@
+20121224;Veille de Noël
+20121225;Noël
+20121226;Lendemain de Noël
+20121231;Veille du jour de l'an
+20130101;Jour de l'an
+20130102;Lendemain du Jour de l'an
+20130214;Saint-Valentin
+20130624;Fête nationale du Québec
+20130701;Fête du Canada
+20131111;Le jour du Souvenir
+20131224;Veille de Noël
+20131225;Noël
+20131226;Lendemain de Noël
+20131231;Veille du jour de l'an
+20140101;Jour de l'an
+20140102;Lendemain du Jour de l'an
+20140214;Saint-Valentin
+20140624;Fête nationale du Québec
+20140701;Fête du Canada
+20141111;Le jour du Souvenir
+20141224;Veille de Noël
+20141225;Noël
+20141226;Lendemain de Noël
+20141231;Veille du jour de l'an
+20150101;Jour de l'an
+20150102;Lendemain du Jour de l'an
+20150214;Saint-Valentin
+20150624;Fête nationale du Québec
+20150701;Fête du Canada
+20151111;Le jour du Souvenir
+20151224;Veille de Noël
+20151225;Noël
+20151226;Lendemain de Noël
+20151231;Veille du jour de l'an
+20160101;Jour de l'an
+20160102;Lendemain du Jour de l'an
+20160214;Saint-Valentin
+20160624;Fête nationale du Québec
+20160701;Fête du Canada
+20161111;Le jour du Souvenir
+20161224;Veille de Noël
+20161225;Noël
+20161226;Lendemain de Noël
+20161231;Veille du jour de l'an
+20170101;Jour de l'an
+20170102;Lendemain du Jour de l'an
+20170214;Saint-Valentin
+20170624;Fête nationale du Québec
+20170701;Fête du Canada
+20171111;Le jour du Souvenir
+20171224;Veille de Noël
+20171225;Noël
+20171226;Lendemain de Noël
+20171231;Veille du jour de l'an
+20131014;Action de grâces
+20141013;Action de grâces
+20151012;Action de grâces
+20161010;Action de grâces
+20171009;Action de grâces
+20130520;Journée nationale des patriotes
+20140519;Journée nationale des patriotes
+20150525;Journée nationale des patriotes
+20160523;Journée nationale des patriotes
+20170522;Journée nationale des patriotes
+20130902;Fête du Travail
+20140901;Fête du Travail
+20150907;Fête du Travail
+20160905;Fête du Travail
+20170904;Fête du Travail
+20130329;Vendredi Saint
+20130401;Lundi de Pâques
+20140418;Vendredi Saint
+20140421;Lundi de Pâques
+20150403;Vendredi Saint
+20150406;Lundi de Pâques
+20160325;Vendredi Saint
+20160328;Lundi de Pâques
+20170414;Vendredi Saint
+20170417;Lundi de Pâques
