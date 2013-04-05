@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import net.rhatec.amtmobile.R;
+import net.rhatec.amtmobile.constants.GeneralConstant;
 import net.rhatec.amtmobile.helpers.MenuCreator;
+import net.rhatec.amtmobile.manager.CompatibilityManager;
 import net.rhatec.amtmobile.manager.FavorisManager;
 import net.rhatec.amtmobile.notifications.OnetimeAlarmReceiver;
 import net.rhatec.amtmobile.providers.TransportProvider;
@@ -65,15 +67,25 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 
 		Preference removeNotification = findPreference("removeNotification");
 		removeNotification.setOnPreferenceClickListener(this);
+		ListPreference storagePreference = (ListPreference) findPreference("storage");
 		
-		ListPreference sortBy = (ListPreference) findPreference("storage");
-		//On affiche l'option sdExtCard seulement si il y un point de montage extSdCard
-		File f = new File("/extSdCard");
-		if(f.exists() && f.isDirectory())
+		if(CompatibilityManager.isBB10())
 		{
-			sortBy.setEntries(getResources().getStringArray(R.array.storageString));
-            sortBy.setEntryValues(getResources().getStringArray(R.array.storageValue));
+			this.getPreferenceScreen().removePreference(storagePreference);
 		}
+		else
+		{
+			//On affiche l'option sdExtCard seulement si il y un point de montage extSdCard
+			File f = new File(GeneralConstant.EXTERNAL_SDCARD_PATH);
+			if(f.exists() && f.isDirectory())
+			{
+				storagePreference.setEntries(getResources().getStringArray(R.array.storageString));
+				storagePreference.setEntryValues(getResources().getStringArray(R.array.storageValue));
+			}
+		}
+		
+		
+		
 	}
 
 	@Override

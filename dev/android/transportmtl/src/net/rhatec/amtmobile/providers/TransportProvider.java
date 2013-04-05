@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 
+import net.rhatec.amtmobile.constants.GeneralConstant;
 import net.rhatec.amtmobile.file.BufferedFileReader;
 import net.rhatec.amtmobile.file.FileReaderIface;
 import net.rhatec.amtmobile.helpers.FileHelpers;
@@ -22,9 +23,6 @@ import net.rhatec.amtmobile.types.TransportServiceInfo;
 
 public class TransportProvider
 {
-	
-	
-	//static String	m_RootPath	= Environment.getExternalStorageDirectory().getAbsolutePath()+"/transportmtldata/";//"sdcard/transportmtldata/";
 	public final static String NOKEYFOUNDINMAP = " ";
 	static public String getRootPath(Context c)
 	{
@@ -37,7 +35,7 @@ public class TransportProvider
 		}
 		else if(pref.equals("external2"))
 		{
-			rootPath = "/extSdCard";
+			rootPath = GeneralConstant.EXTERNAL_SDCARD_PATH;
 		}
 		else //external
 		{			
