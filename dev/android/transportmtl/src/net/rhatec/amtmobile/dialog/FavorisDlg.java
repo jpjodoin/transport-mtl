@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import net.rhatec.amtmobile.R;
 import net.rhatec.amtmobile.baseactivity.ActivityWithMenu;
 import net.rhatec.amtmobile.constants.TypeString;
@@ -23,8 +26,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.view.Menu;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;

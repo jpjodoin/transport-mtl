@@ -1,17 +1,35 @@
 package net.rhatec.amtmobile.baseactivity;
 
-import net.rhatec.amtmobile.helpers.MenuCreator;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
+import com.actionbarsherlock.R;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 
-public class ActivityWithMenu extends Activity
+import net.rhatec.amtmobile.helpers.MenuCreator;
+import android.os.Bundle;
+import com.actionbarsherlock.view.Window;
+
+
+public class ActivityWithMenu extends SherlockActivity
 {
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	// Cr�ations des boutons et des menus par d�faut
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+	@Override
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setTheme(R.style.Theme_Sherlock);
+		getSupportActionBar().setDisplayShowTitleEnabled(true);	
+		getSupportActionBar().setDisplayShowHomeEnabled(false);
+		
+	}
+	
+
+	
+	
 	/** hook into menu button for activity */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
@@ -21,7 +39,7 @@ public class ActivityWithMenu extends Activity
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	/** when menu button option selected */
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{

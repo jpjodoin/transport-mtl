@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.rhatec.amtmobile"
+    android:installLocation="auto"
+    android:versionCode="26"
+    android:versionName="1.4">
+
+    <uses-sdk android:minSdkVersion="3" />
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.FLASHLIGHT" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <application
+        android:allowClearUserData="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".dialog.MainDlg"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".dialog.TransportSelectDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.RechercheArretDlg"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.CarteViewerDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.ListeCircuitDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.ListeArretDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.HoraireDlg"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.FavorisDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.PreferenceDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.NotifierDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".dialog.CreateGroupDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".dialog.AccesCircuitDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".dialog.MiseAJourDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.DatabaseNotFoundDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.SupprimerDBADlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.AProposDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.AvertissementValiditeDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+        <activity
+            android:name=".dialog.UserManualDlg"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard" >
+        </activity>
+
+        <receiver android:name=".notifications.OnetimeAlarmReceiver" >
+        </receiver>
+    </application>
+
+</manifest>

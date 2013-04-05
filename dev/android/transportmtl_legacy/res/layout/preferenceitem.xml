@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/RelativeLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:layout_gravity="right">
+
+
+
+<TableLayout android:layout_height="wrap_content" android:layout_above="@+id/TextView01" android:id="@+id/TableLayout01" android:layout_width="fill_parent">
+
+
+<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableRow01"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10sp" android:paddingRight="10sp" android:text="STM" android:id="@+id/reseauTransport"></TextView><TextView android:layout_height="wrap_content" android:id="@+id/ExtraInfo" android:layout_width="fill_parent" android:paddingLeft="4sp" android:paddingRight="10px" android:text="ExtraInfo" android:gravity="left" android:layout_weight="5"></TextView>
+</TableRow><TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/TableRow02"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10sp" android:text="49000" android:width="70px" android:layout_weight="0" android:paddingRight="10sp" android:id="@+id/NoArretListTxt">
+		  			</TextView><TextView android:layout_height="wrap_content" android:gravity="left" android:layout_width="fill_parent" android:layout_weight="5" android:paddingRight="10px" android:text="Intersection1/Intersection2" android:paddingLeft="4sp" android:id="@+id/IntersectionTxt">
+		  		 </TextView>
+		  			
+
+
+
+
+</TableRow>
+
+
+
+
+
+
+<TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow04" android:layout_below="@+id/TableRow02"><TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="10sp" android:text="903 Nord:" android:paddingRight="10sp" android:id="@+id/AutobusTxt" android:width="85px"></TextView><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="22:22   22:42   22:59   23:15 " android:paddingLeft="4sp" android:id="@+id/ProchainPassageTxt"></TextView>
+</TableRow></TableLayout>
+
+
+
+
+
+</RelativeLayout>

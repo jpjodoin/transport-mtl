@@ -38,6 +38,7 @@ public class ListeCircuitDlg extends ListActivityWithMenu implements OnItemClick
 		ListView lView = getListView();
 		lView.setLongClickable(false);
 		lView.setClickable(true);
+		
 		//lView.setLayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT);
 
 		m_NomTransport = b.getString(TypeString.SOCIETECODE);
@@ -45,7 +46,7 @@ public class ListeCircuitDlg extends ListActivityWithMenu implements OnItemClick
 		Vector<Autobus> vListeCircuit = TransportProvider.ObtenirListeCircuit(this, m_NomTransport);
 		if (vListeCircuit.size() != 0)
 		{
-			this.setTitle(getResources().getString(R.string.ListeCircuitDlg_Liste_de_circuit_pour) + " " + m_NomTransport.toUpperCase());
+			this.setTitle(m_NomTransport.toUpperCase() + "-" + getResources().getString(R.string.ListeCircuitDlg_Liste_de_circuit_pour));
 			Iterator<Autobus> iter = vListeCircuit.iterator();
 			HashMap<String, String> mapInfoDirectionPhrase = TransportProvider.ObtenirPhraseInfoDirection(this, m_NomTransport);
 			HashMap<String, String> mapInfoCircuitPhrase = TransportProvider.ObtenirPhraseInfoCircuit(this, m_NomTransport);

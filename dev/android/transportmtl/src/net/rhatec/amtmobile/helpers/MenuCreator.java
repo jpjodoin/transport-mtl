@@ -1,5 +1,8 @@
 package net.rhatec.amtmobile.helpers;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import net.rhatec.amtmobile.R;
 import net.rhatec.amtmobile.dialog.FavorisDlg;
 import net.rhatec.amtmobile.dialog.MiseAJourDlg;
@@ -7,8 +10,7 @@ import net.rhatec.amtmobile.dialog.PreferenceDlg;
 import net.rhatec.amtmobile.dialog.TransportSelectDlg;
 import android.content.Context;
 import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuItem;
+
 
 public class MenuCreator
 {
@@ -31,9 +33,13 @@ public class MenuCreator
 		// MenuCreator_Accueil
 
 		MenuItem item1 = menu.add(Menu.NONE, MenuPrincipale, Menu.NONE, _context.getResources().getString(R.string.MenuCreator_Accueil));
+		item1.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);        
 		MenuItem item2 = menu.add(Menu.NONE, Favoris, Menu.NONE, _context.getResources().getString(R.string.MenuCreator_Favoris));
+		item2.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM); 
 		MenuItem item3 = menu.add(Menu.NONE, Parametre, Menu.NONE, _context.getResources().getString(R.string.MenuCreator_Preferences));
+		item3.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM); 
 		MenuItem item4 = menu.add(Menu.NONE, MiseAJour, Menu.NONE, _context.getResources().getString(R.string.MenuCreator_MAJ));
+		item4.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM); 
 		item1.setAlphabeticShortcut('m');
 		item1.setIcon(R.drawable.ic_menu_home);
 		item2.setAlphabeticShortcut('f');

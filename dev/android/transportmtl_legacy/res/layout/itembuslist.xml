@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight" >
+
+    <TextView
+        android:id="@+id/TextView01"
+        style="@style/TexteListeStandard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="10sp"
+        android:text="1000"
+        android:textSize="22sp"
+        android:width="60dp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/TextView02"
+        style="@style/TexteListeStandard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:ellipsize="middle"
+        android:gravity="left"
+        android:text="TextView02"
+        android:textSize="22sp" >
+    </TextView>
+
+</LinearLayout>

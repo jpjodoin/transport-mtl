@@ -3,7 +3,7 @@
     <string name="app_name">TransportMTL</string>
     <string name="Erreur">Error</string>
     <string name="MiseAJourDlg_Carte_SD_detectee">SD card detected</string>
-    <string name="main_lbl_choix_transporteur">Please choose a public transit</string>
+    <string name="main_lbl_choix_transporteur">Public Transit</string>
     <string name="arret_title_choixarret">Please enter your bus stop number or a bus route number</string>
     <string name="arret_inconnu_msg">There is no schedule for this bus stop</string>
     <string name="arret_inconnu_titlebox">Unknown bus stop</string>
@@ -53,10 +53,10 @@
     <string name="HoraireSpinnerDlg_Horaire_pour_arret">Schedule for stop </string>
     <string name="HoraireSpinnerDlg_Veuillez_choisir_un_circuit">Please choose route</string>
     <string name="HoraireSpinnerDlg_Veuillez_choisir_un_horaire">Please choose a schedule</string>
-    <string name="ListeArretDlg_Liste_d_arret_pour">Stop for </string>
+    <string name="ListeArretDlg_Liste_d_arret_pour">Stops</string>
     <string name="ListeArretDlg_Aucun_horaire_disponible">No schedule available</string>
     <string name="ListeArretDlg_Debarcadere_seulement">Exit only</string>
-    <string name="ListeCircuitDlg_Liste_de_circuit_pour">Route Listings for</string>
+    <string name="ListeCircuitDlg_Liste_de_circuit_pour">Route Listings</string>
     <string name="MiseAJourDlg_Mise_a_jour_terminee_succes">Update ended with success</string>
     <string name="MiseAJourDlg_miseAjour_annule_par_utilisateur">Update canceled by user</string>
     <string name="MiseAJourDlg_Carte_SD_absente">SD Card missing</string>
@@ -75,7 +75,6 @@
     <string name="MiseAJourDlg_Terminer">End</string>
     <string name="MiseAJourDlg_Continuer">Continue</string>
     <string name="PreferenceDlg_remise_a_zero_favoris_patienter">Reset in progress... Please wait !</string>
-    <string name="RechercheArretDlg_rechercher_arret_pour">Search bus stop for </string>
     <string name="RechercheArretDlg_aucune_mise_a_jour">No database available for</string>
     <string name="RechercheArretDlg_Autobus_inconnu">Unknown bus</string>
     <string name="UpdateManager_donnees_recus_format_incompatbile">Corrupted data received</string>

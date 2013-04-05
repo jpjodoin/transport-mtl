@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="NotifierStyle" parent="@android:style/Theme.Dialog">
+    <item name="android:windowNoTitle">true</item>
+
+	</style>
+	
+	<style name="TexteStandard">
+    <item name="android:textColor">#FFFFFF</item>
+    <item name="android:textSize">16sp</item>
+	</style>
+	
+	<style name="TexteStandardPetit">
+    <item name="android:textColor">#FFFFFF</item>
+    <item name="android:textSize">15sp</item>
+	</style>
+	
+	
+	<style name="TexteListeStandard" parent="@style/TexteStandard">
+		<item name="android:textSize">22sp</item>
+	</style>
+	
+	<style name="BoutonStandard">
+    <item name="android:background">@drawable/buttonbg</item>
+    <item name="android:textSize">16sp</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">#FFFFFF</item>
+    </style>   
+    
+    <style name="FavorisItem">
+    <item name="android:textColor">#FFFFFF</item> 
+    <item name="android:textSize">18sp</item>  
+	</style>
+
+</resources>

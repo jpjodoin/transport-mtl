@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lblAboutRhatec"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20px"
+                android:text="@string/AProposDlg_Compagnie_Genie_Informatique" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AProposDlg_Developpeur" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView01"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jean-Philippe Jodoin" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AProposDlg_Contributeurs" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView02"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alexandre L&apos;Heureux" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView03"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hocine Zebbar" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/WebRhatec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20px"
+                android:layout_marginTop="20px"
+                android:gravity="center_horizontal"
+                android:text="www.rhatec.net" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/lblRemerciementSpeciaux"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/AProposDlg_Remerciements" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView06"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20px"
+                android:text="@string/AProposDlg_DavidCerat" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/WebDavidCerat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20px"
+                android:gravity="center_horizontal"
+                android:text="www.davidcerat.net" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView08"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px"
+                android:text="@string/AProposDlg_Demande_Support" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/EmailSupport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="30px"
+                android:text="support@rhatec.net" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TextView09"
+                style="@style/TexteStandardPetit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px"
+                android:text="@string/AProposDlg_ThanksDataProviderTitle" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/TransportSocietyList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="30px"
+                android:text="@string/AProposDlg_ThanksDataProvider" >
+            </TextView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    
+
+</LinearLayout>

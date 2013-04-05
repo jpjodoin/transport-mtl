@@ -24,13 +24,15 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+
+
+import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class PreferenceDlg extends PreferenceActivity implements OnPreferenceClickListener
+public class PreferenceDlg extends SherlockPreferenceActivity implements OnPreferenceClickListener
 {
 
 	ArrayList<HashMap<String, String>>	m_List;
@@ -40,8 +42,11 @@ public class PreferenceDlg extends PreferenceActivity implements OnPreferenceCli
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
+		setTheme(R.style.Theme_Sherlock);
 		super.onCreate(savedInstanceState);
-
+		
+		getSupportActionBar().setDisplayShowTitleEnabled(true);	
+		getSupportActionBar().setDisplayShowHomeEnabled(false);
 		this.setTitle(getResources().getText(R.string.preference_title));
 		addPreferencesFromResource(R.xml.preferences);
 

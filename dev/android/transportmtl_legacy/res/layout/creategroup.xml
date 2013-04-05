@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10sp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/properties"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:gravity="center_vertical|clip_vertical" >
+
+            <EditText
+                android:id="@+id/eName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/bColor"
+                android:layout_height="fill_parent"
+       			android:layout_width="wrap_content"   
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.50"
+                android:adjustViewBounds="true"
+                android:paddingLeft="12sp"
+                android:layout_marginLeft="12sp"
+                android:scaleType="centerInside"
+                android:text="..." />
+				
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/bookmarkList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+               android:dividerHeight="3dip"
+               android:drawSelectorOnTop="false"
+        
+            android:focusable="true" >
+
+        </ListView>
+        
+       <TextView 
+    android:id="@android:id/empty"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/CreateGroupDlg_ListeVide" />
+
+</LinearLayout>
+
+  
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" 
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/bCancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/MiseAJourDlg_Annuler" />
+
+        <Button
+            android:id="@+id/bAccept"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/NotifierDlg_Bouton_Definir" />
+
+    </LinearLayout>
+</LinearLayout>

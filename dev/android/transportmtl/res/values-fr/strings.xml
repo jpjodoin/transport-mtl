@@ -3,7 +3,7 @@
     <string name="app_name">TransportMTL</string>
     <string name="Erreur">Erreur</string>
     <string name="MiseAJourDlg_Carte_SD_detectee">Carte SD détectée</string>
-    <string name="main_lbl_choix_transporteur">Veuillez choisir un fournisseur de transport en commun:</string>
+    <string name="main_lbl_choix_transporteur">Société de transport</string>
     <string name="arret_title_choixarret">Veuillez entrer le numéro de l\'arrêt ou du circuit dont vous désirez obtenir l\'horaire:</string>
     <string name="arret_inconnu_msg">Il n\'y a pas d\'horaire disponible pour cet arrêt</string>
     <string name="arret_inconnu_titlebox">Arrêt inconnu</string>
@@ -53,10 +53,10 @@
     <string name="HoraireSpinnerDlg_Horaire_pour_arret">Horaire pour l\'arrêt </string>
     <string name="HoraireSpinnerDlg_Veuillez_choisir_un_circuit">Veuillez choisir un circuit</string>
     <string name="HoraireSpinnerDlg_Veuillez_choisir_un_horaire">Veuillez choisir un horaire</string>
-    <string name="ListeArretDlg_Liste_d_arret_pour">Liste d\'arrêt pour </string>
+    <string name="ListeArretDlg_Liste_d_arret_pour">Arrêts</string>
     <string name="ListeArretDlg_Aucun_horaire_disponible">Aucun horaire disponible</string>
     <string name="ListeArretDlg_Debarcadere_seulement">Débarcadère seulement</string>
-    <string name="ListeCircuitDlg_Liste_de_circuit_pour">Liste de circuit pour</string>
+    <string name="ListeCircuitDlg_Liste_de_circuit_pour">Liste de circuits</string>
     <string name="MiseAJourDlg_Mise_a_jour_terminee_succes">Mise à jour terminée avec succès</string>
     <string name="MiseAJourDlg_miseAjour_annule_par_utilisateur">La mise à jour a été annulé par l\'utilisateur</string>
     <string name="MiseAJourDlg_Carte_SD_absente">Carte SD absente</string>
@@ -78,7 +78,6 @@
     <string name="MiseAJourDlg_Recherche_MAJ">Recherche de mise à jour...</string>
     <string name="MiseAJourDlg_Annuler_rechercher">Annuler la recherche</string>
     <string name="PreferenceDlg_remise_a_zero_favoris_patienter">Remise à zéro en cours... Veuillez patienter !</string>
-    <string name="RechercheArretDlg_rechercher_arret_pour">Recherche d\'arrêt pour </string>
     <string name="RechercheArretDlg_aucune_mise_a_jour">Aucune base de donnée disponible</string>
     <string name="RechercheArretDlg_Autobus_inconnu">Autobus Inconnu</string>
     <string name="UpdateManager_donnees_recus_format_incompatbile">Données reçues dans un format non compatible</string>

@@ -35,8 +35,8 @@ public class ListeArretDlg extends ListActivityWithMenu implements OnItemClickLi
 		super.onCreate(savedInstanceState);
 		Bundle b = this.getIntent().getExtras();
 		m_TransportName = b.getString(TypeString.SOCIETECODE);
-		this.setTitle(getResources().getString(R.string.ListeArretDlg_Liste_d_arret_pour) + " " + m_TransportName.toUpperCase());
 		m_NoAutobus = b.getString(TypeString.NOCIRCUIT);
+		this.setTitle(m_TransportName.toUpperCase() + "-" + m_NoAutobus + "-" + getResources().getString(R.string.ListeArretDlg_Liste_d_arret_pour) );		
 		m_Direction = b.getString(TypeString.DIRECTION);
 		m_InfoDirectionCode = b.getString(TypeString.INFODIRECTIONCODE);
 		m_InfoCircuitCode = b.getString(TypeString.INFOCIRCUITCODE);

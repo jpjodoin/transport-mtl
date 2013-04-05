@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:state_pressed="true" android:textSize="20sp" android:state_enabled="true" android:drawable="@drawable/bt2_pressed" />
+<item android:state_focused="true" android:textSize="20sp" android:state_enabled="true" android:drawable="@drawable/bt2_focused" />
+<item android:state_enabled="false" android:textSize="20sp" android:drawable="@drawable/bt2_disabled"/>
+<item android:drawable="@drawable/bt2"/>
+</selector>

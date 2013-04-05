@@ -45,9 +45,7 @@ public class RechercheArretDlg extends ActivityWithMenu implements
 			currentService.setFinValidite(finValidite);
 			setContentView(R.layout.arret);
 
-			this.setTitle(getResources().getString(
-					R.string.RechercheArretDlg_rechercher_arret_pour)
-					+ " " + m_TransportName.toUpperCase());
+			setTitle(m_TransportName.toUpperCase());
 
 			if (currentService.displaySearchBox()) {
 				Button bRecherche = (Button) findViewById(R.id.buttonGo);

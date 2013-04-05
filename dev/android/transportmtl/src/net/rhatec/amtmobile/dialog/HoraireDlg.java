@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import net.rhatec.amtmobile.R;
+import net.rhatec.amtmobile.baseactivity.ActivityWithMenu;
 import net.rhatec.amtmobile.constants.TypeString;
 import net.rhatec.amtmobile.helpers.MenuCreator;
 import net.rhatec.amtmobile.helpers.StringHelpers;
@@ -23,14 +24,14 @@ import net.rhatec.amtmobile.types.Pair;
 import net.rhatec.amtmobile.types.Temps;
 import net.rhatec.amtmobile.types.TransportServiceInfo;
 import net.rhatec.amtmobile.view.HoraireAdapter;
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.Menu;
-import android.view.MenuItem;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -41,7 +42,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class HoraireDlg extends Activity implements OnItemSelectedListener, OnItemClickListener
+public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListener, OnItemClickListener
 {
 	HashMap<String, String>	m_ExtraInfoHoraire;
 	Vector<Autobus>			m_CurrentDirectionVector;
@@ -95,7 +96,7 @@ public class HoraireDlg extends Activity implements OnItemSelectedListener, OnIt
 		else
 			setContentView(R.layout.horaire_new_amtmetro);	
 			
-		this.setTitle(m_NomTransportService.toUpperCase() + ": " + getResources().getString(R.string.HoraireSpinnerDlg_Horaire_pour_arret) + " " + m_NoArret);
+		this.setTitle(m_NomTransportService.toUpperCase() + "-"  +m_NoArret);
 
 		HoraireArret hArret;
 		if (m_nPositionInFile != 0)

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="fill_parent"
+	android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_gravity="right" android:id="@+id/HoraireTableLayout">
+
+<RelativeLayout android:layout_height="wrap_content" android:id="@+id/HoraireTabInfoLayout" android:layout_width="fill_parent">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/horaire_intersection_lbl" android:paddingRight="25px" android:text="@string/HoraireSpinnerDlg_Station" style="@style/TexteStandardPetit"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/horaire_intersection" android:text="Intersection 1/ Intersection 2" android:layout_toRightOf="@+id/horaire_intersection_lbl" style="@style/TexteStandardPetit"></TextView>
+
+
+ 
+
+
+</RelativeLayout>
+
+<LinearLayout android:layout_height="wrap_content" android:id="@+id/SpinnerLayout" android:layout_below="@+id/HoraireTabInfoLayout" android:layout_width="fill_parent" android:weightSum="2" android:orientation="vertical"><Spinner android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_below="@+id/HoraireTabInfoLayout" android:id="@+id/SpinnerListeCircuit" android:layout_weight="1"></Spinner><Spinner android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/SpinnerDirection"></Spinner><Spinner android:layout_height="wrap_content" android:layout_toRightOf="@+id/SpinnerListeCircuit" android:layout_below="@+id/HoraireTabInfoLayout" android:layout_width="fill_parent" android:layout_weight="1" android:id="@+id/SpinnerHoraire"></Spinner>
+</LinearLayout><FrameLayout android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/FrameHoraire" android:layout_below="@+id/SpinnerLayout">
+<ListView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ListeHoraire" android:isScrollContainer="true"></ListView>
+</FrameLayout>
+
+
+
+</RelativeLayout>

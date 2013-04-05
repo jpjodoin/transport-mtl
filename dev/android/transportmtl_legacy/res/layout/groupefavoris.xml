@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/explist_indicator"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:scaleType="fitStart"
+        android:src="@drawable/expander_group" />
+
+    <TextView
+        android:id="@+id/group_name"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:gravity="center_vertical"
+        android:paddingLeft="10sp"
+        android:text="Groupe"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

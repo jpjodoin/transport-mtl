@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<array name="connexionString">
+        <item>All connection</item>
+        <item>Wifi only</item>
+        <item>3G only</item>
+</array>
+<array name="connexionValue">
+        <item>all-connect</item>
+        <item>only-wifi</item>
+        <item>only-3g</item>
+</array>
+
+<array name="homepageString">
+        <item>Transport service selection</item>
+        <item>Bookmarks</item>
+</array>
+<array name="homepageValue">
+        <item>select-transport</item>
+        <item>bookmarks</item>
+</array>
+
+<array name="storageString">
+     	<item>Internal (flash)</item>
+        <item>External (sdcard)</item>       
+        <item>External 2 (extSdCard)</item>
+</array>
+<array name="storageValue">        
+        <item>internal</item>
+        <item>external</item>
+        <item>external2</item> 
+</array>
+
+<array name="storageStringNoExt">
+     	<item>Internal</item>
+        <item>External</item>       
+</array>
+<array name="storageValueNoExt">        
+        <item>internal</item>
+        <item>external</item>
+</array>
+
+</resources>
