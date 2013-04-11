@@ -40,7 +40,7 @@ import android.widget.ImageButton;
 /*
  * Activit� qui affiche les favoris de l'application dans un dialog
  */
-public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnChildClickListener, OnGroupClickListener, OnItemLongClickListener
+public class FavorisDlg extends ActivityWithMenu implements OnChildClickListener, OnGroupClickListener, OnItemLongClickListener
 {
 
 
@@ -49,9 +49,9 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 	private  ArrayList<FavorisNode>	m_List;
 	ExpandableListView							m_ListeView;
 	FavorisItemAdapter m_ItemAdapter = null;
-	ImageButton								m_modifier;
 
 	private int m_OptionCreerGroupe;
+	private int m_OptionInformation;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -61,8 +61,7 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 		setContentView(R.layout.favoris);
 		this.setTitle(this.getResources().getString(R.string.FavorisDlg_Titre));
 
-		m_modifier = (ImageButton) findViewById(R.id.btn_modifier);
-		m_modifier.setOnClickListener(this);
+
 
 		m_ListeView = (ExpandableListView) findViewById(R.id.list);
 		m_ListeView.setGroupIndicator(null); 
@@ -147,9 +146,15 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		m_OptionCreerGroupe = MenuCreator.populateMenu(menu, this.getBaseContext()) + 1;
+		
 		MenuItem item = menu.add(Menu.NONE, m_OptionCreerGroupe, Menu.NONE, this.getString(R.string.menu_option_ajouter_groupe));
 		item.setAlphabeticShortcut('g');
-		item.setIcon(android.R.drawable.ic_menu_add);
+		item.setIcon(R.drawable.ic_action_group);
+		m_OptionInformation = m_OptionCreerGroupe+1;
+		MenuItem  optionInfoItem = menu.add(Menu.NONE, m_OptionInformation, Menu.NONE, this.getString(R.string.menu_option_info));
+		optionInfoItem.setAlphabeticShortcut('i');
+		optionInfoItem.setIcon(R.drawable.ic_action_info);
+		
 		return true;
 	}
 
@@ -181,6 +186,21 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 			iCreateGroup.putExtras(b);			
 			this.startActivityForResult(iCreateGroup, 1);
 
+		}
+		else if(nItemId == m_OptionInformation)
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		    builder.setTitle(getResources().getString(R.string.CreateGroupDlg_ModifierFavorisGroupe));
+		    builder.setMessage(getResources().getString(R.string.CreateGroupDlg_ModifierFavorisInfo));
+		    builder.setPositiveButton(getResources().getString(R.string.CreateGroupDlg_Daccord), new DialogInterface.OnClickListener() {
+		    	  @Override
+		    	  public void onClick(DialogInterface dialog, int which) {
+		    	    dialog.dismiss();
+		    	  }
+		    	});
+
+		    AlertDialog dlg = builder.create();
+		    dlg.show();
 		}
 		else
 		{
@@ -304,36 +324,8 @@ public class FavorisDlg extends ActivityWithMenu implements OnClickListener, OnC
 		this.restoreExpandedState(ids);
 	}
 
-	/**
-	 * @function: onClick
-	 * @description: Lorsqu'un boutton est clique
-	 * @author: Hocine
-	 * @params[in]:
-	 * @params[out]:
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
-	 */
-	@Override
-	public void onClick(View v)
-	{
-		switch (v.getId())
-		{
-		case R.id.btn_modifier:
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		    builder.setTitle(getResources().getString(R.string.CreateGroupDlg_ModifierFavorisGroupe));
-		    builder.setMessage(getResources().getString(R.string.CreateGroupDlg_ModifierFavorisInfo));
-		    builder.setPositiveButton(getResources().getString(R.string.CreateGroupDlg_Daccord), new DialogInterface.OnClickListener() {
-		    	  @Override
-		    	  public void onClick(DialogInterface dialog, int which) {
-		    	    dialog.dismiss();
-		    	  }
-		    	});
+	
 
-		    AlertDialog dlg = builder.create();
-		    dlg.show();
-			break;
-		}
-
-	}
 	@Override
 	public void removeItem(Menu m)
 	{

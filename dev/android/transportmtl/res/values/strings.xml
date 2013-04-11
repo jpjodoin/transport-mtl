@@ -7,8 +7,7 @@
     <string name="arret_title_choixarret">Please enter your bus stop number or a bus route number</string>
     <string name="arret_inconnu_msg">There is no schedule for this bus stop</string>
     <string name="arret_inconnu_titlebox">Unknown bus stop</string>
-    <string name="update_manager_title">Update manager</string>
-    <string name="update_manager_find">STRING_NOT_DEFINED_ERROR</string>
+    <string name="update_manager_title">Update</string>
     <string name="general_cancel">Cancel</string>
     <string name="general_continue">Continue</string>
     <string name="general_ok">Ok</string>
@@ -93,7 +92,7 @@
     <string name="MenuCreator_Favoris">Bookmarks</string>
     <string name="MenuCreator_Preferences">Preference</string>
     <string name="MenuCreator_MAJ">Update</string>
-    <string name="FavorisDlg_Titre">Please choose a bookmark</string>
+    <string name="FavorisDlg_Titre">Bookmarks</string>
     <string name="FavorisDlg_choisir_mode">Please choose mode</string>
     <string name="NotifierDlg_Bouton_Definir">Add</string>
     <string name="NotifierDlg_Bouton_Reinitialiser">Cancel</string>
@@ -168,4 +167,6 @@
     <string name="CreateGroupDlg_Supprimer">Delete</string>
     <string name="CreateGroupDlg_EnleverDuGroupe">Remove from group</string>
     <string name="CreateGroupDlg_Daccord">Ok</string>
+    <string name="menu_option_info">Information</string>
+    <string name="menu_option_afficher_arret_carte">Show location on map</string>
 </resources>

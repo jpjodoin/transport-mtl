@@ -44,7 +44,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 	private Time				m_heurePassage;
 	private int					m_delaiNotificationChoisi;
 
-	// Bloc d'infos récuperer via le bundel.
+	// Bloc d'infos rï¿½cuperer via le bundel.
 	private Time				m_heureNotification;
 	private Time				m_dateNotification;
 	private String				m_strNoAutobus;
@@ -61,7 +61,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 
 	private TextView			m_heureNotificationTxt;
 
-	// Structure de données
+	// Structure de donnï¿½es
 	String[]					ArrayStringDelaiNotification;									// =
 	// {"5 "
 	// +
@@ -91,7 +91,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 		int numDelaiNotification = ArrayDelaiNotification.length;
 		for (int i = 0; i < numDelaiNotification; ++i)
 		{
-			if (ArrayDelaiNotification[i] < 10)// Hack pour éviter que la Notification Time soit sur deux lignes
+			if (ArrayDelaiNotification[i] < 10)// Hack pour ï¿½viter que la Notification Time soit sur deux lignes
 				ArrayStringDelaiNotification[i] = "0" + String.valueOf(ArrayDelaiNotification[i]) + " " + getString(R.string.notifier_minuteBeforeBusStop);
 			else
 				ArrayStringDelaiNotification[i] = String.valueOf(ArrayDelaiNotification[i]) + " " + getString(R.string.notifier_minuteBeforeBusStop);
@@ -99,7 +99,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 
 		// L'ordre d'appel des deux fonctions plus bas est important
 		m_heureNotification = new Time();
-		// Recuperation des informations passer par l'activité précédente.
+		// Recuperation des informations passer par l'activitï¿½ prï¿½cï¿½dente.
 		this.recupererInformationsPasseesParBundle();
 
 		Calendar unCalendrier = Calendar.getInstance();
@@ -150,7 +150,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 		else
 			heurePassageAutobus.setText(m_heurePassage.format("%I:%M%p"));
 
-		/* Déclaration des boutons de la vue */
+		/* Dï¿½claration des boutons de la vue */
 
 		// Date de la notification
 		m_buttonDate = (Button) findViewById(R.id.notifier_DateActuelle);
@@ -196,9 +196,9 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 		{
 			/*
 			 * Est ce que l'heure et la date de notification choisi par
-			 * l'utilisateur est cohérente. Cohérente si la date est pas dans le
-			 * passée et si l'heure de notification est plus tôt que l'heure de
-			 * passage (cliquée)
+			 * l'utilisateur est cohï¿½rente. Cohï¿½rente si la date est pas dans le
+			 * passï¿½e et si l'heure de notification est plus tï¿½t que l'heure de
+			 * passage (cliquï¿½e)
 			 */
 			Time timeActuel = DateHelpers.obtenirObjetTimeActuel();
 			// TODO supprimer les strings NotifierDlg_* non utilisees
@@ -261,9 +261,9 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 
 	/**
 	 * @function: onItemSelected
-	 * @description: Fonction appelée lorsque le spinner du délai de
-	 *               notification bouge. La fonction met à jour l'heure de
-	 *               notification en fonction du délai de notification choisi
+	 * @description: Fonction appelï¿½e lorsque le spinner du dï¿½lai de
+	 *               notification bouge. La fonction met ï¿½ jour l'heure de
+	 *               notification en fonction du dï¿½lai de notification choisi
 	 *               dans le spinner.
 	 * @author: Hocine
 	 * @params[in]:
@@ -278,7 +278,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 		// Ici on recupere l'heure du passage
 		m_heureNotification.set(m_heurePassage);
 
-		// Ici on récupère l'annee, le mois et le jour
+		// Ici on rï¿½cupï¿½re l'annee, le mois et le jour
 		m_heureNotification.year = m_dateNotification.year;
 		m_heureNotification.month = m_dateNotification.month;
 		m_heureNotification.monthDay = m_dateNotification.monthDay;
@@ -313,9 +313,9 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 
 	/**
 	 * @function: updateAffichageDateNotification
-	 * @description: Gère de mettre a jour la date affichée par le
-	 *               boutonDate(spinnerDate) et de et de mettre à jour la date
-	 *               que l'utilisateur à choisi pour la notification.
+	 * @description: Gï¿½re de mettre a jour la date affichï¿½e par le
+	 *               boutonDate(spinnerDate) et de et de mettre ï¿½ jour la date
+	 *               que l'utilisateur ï¿½ choisi pour la notification.
 	 * @author: Hocine
 	 * @params[in]:
 	 * @params[out]:
@@ -377,7 +377,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 	 * @function: afficherMessage
 	 * @description: Affiche un message avec un alert dialogue
 	 * @author: Hocine
-	 * @params[in]: message: message à afficher.
+	 * @params[in]: message: message ï¿½ afficher.
 	 */
 	private void afficherMessage(String message)
 	{
@@ -400,7 +400,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 	 * @function: afficherQuestion
 	 * @description: Afficher une question
 	 * @author: JP
-	 * @params[in]: message: Question à afficher
+	 * @params[in]: message: Question ï¿½ afficher
 	 */
 	private void afficherQuestion(String message)
 	{
@@ -424,7 +424,7 @@ public class NotifierDlg extends ActivityWithMenu implements OnClickListener, On
 	{
 
 		Intent intentToFire = new Intent(this, OnetimeAlarmReceiver.class);
-		// On récupere l'information reçue et on la passe à l'activité suivante.
+		// On rï¿½cupere l'information reï¿½ue et on la passe ï¿½ l'activitï¿½ suivante.
 		m_Preferences.edit().putString(NOTIFICATION_TIME, m_heureNotification.format2445()).commit();
 
 		Bundle b = this.getIntent().getExtras();

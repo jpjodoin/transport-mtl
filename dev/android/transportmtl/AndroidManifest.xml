@@ -107,7 +107,7 @@
             android:name=".dialog.CreateGroupDlg"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="standard"
-            android:theme="@android:style/Theme.Dialog" >
+           android:theme="@android:style/Theme.Dialog"  >
         </activity>
         <activity
             android:name=".dialog.AccesCircuitDlg"

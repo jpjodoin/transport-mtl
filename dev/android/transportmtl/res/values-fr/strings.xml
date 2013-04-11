@@ -7,8 +7,7 @@
     <string name="arret_title_choixarret">Veuillez entrer le numéro de l\'arrêt ou du circuit dont vous désirez obtenir l\'horaire:</string>
     <string name="arret_inconnu_msg">Il n\'y a pas d\'horaire disponible pour cet arrêt</string>
     <string name="arret_inconnu_titlebox">Arrêt inconnu</string>
-    <string name="update_manager_title">Gestionnaire de mise à jour</string>
-    <string name="update_manager_find">STRING_NOT_DEFINED_ERROR</string>
+    <string name="update_manager_title">Mise à jour</string>
     <string name="general_cancel">Annuler</string>
     <string name="general_continue">Continuer</string>
     <string name="general_ok">Ok</string>
@@ -97,7 +96,7 @@
     <string name="MenuCreator_Favoris">Favoris</string>
     <string name="MenuCreator_Preferences">Préférences</string>
     <string name="MenuCreator_MAJ">Mise à jour</string>
-    <string name="FavorisDlg_Titre">Veuillez choisir un favoris</string>
+    <string name="FavorisDlg_Titre">Favoris</string>
     <string name="FavorisDlg_choisir_mode">Veuillez choisir un mode</string>
     <string name="NotifierDlg_Bouton_Definir">Ajouter</string>
     <string name="NotifierDlg_Bouton_Reinitialiser">Annuler</string>
@@ -168,4 +167,6 @@
     <string name="CreateGroupDlg_Supprimer">Supprimer</string>
     <string name="CreateGroupDlg_EnleverDuGroupe">Enlever du groupe</string>
     <string name="CreateGroupDlg_Daccord">D\'accord</string>
+    <string name="menu_option_info">Information</string>
+    <string name="menu_option_afficher_arret_carte">Afficher sur la carte</string>
 </resources>

@@ -41,13 +41,13 @@ public class MenuCreator
 		MenuItem item4 = menu.add(Menu.NONE, MiseAJour, Menu.NONE, _context.getResources().getString(R.string.MenuCreator_MAJ));
 		item4.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM); 
 		item1.setAlphabeticShortcut('m');
-		item1.setIcon(R.drawable.ic_menu_home);
+		item1.setIcon(R.drawable.ic_action_home);
 		item2.setAlphabeticShortcut('f');
-		item2.setIcon(R.drawable.ic_menu_star); // android.R.drawable.ic_menu_recent_history
+		item2.setIcon(R.drawable.ic_action_favoris); // android.R.drawable.ic_menu_recent_history
 		item3.setAlphabeticShortcut('p');
-		item3.setIcon(R.drawable.ic_menu_preferences);
+		item3.setIcon(R.drawable.ic_action_preference);
 		item4.setAlphabeticShortcut('t');
-		item4.setIcon(R.drawable.ic_menu_refresh);
+		item4.setIcon(R.drawable.ic_action_refresh);
 		return MiseAJour; // On retourne la valeur du dernier item au cas o� on
 							// voudrait rajouter d'autres options au menu
 

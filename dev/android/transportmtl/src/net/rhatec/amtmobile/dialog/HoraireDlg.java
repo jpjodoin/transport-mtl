@@ -51,6 +51,7 @@ public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListen
 	HashMap<String, String>	mapInfoCircuit;
 	Vector<Vector<Autobus>>	m_BusVector;
 	int						m_OptionAjoutFavoris	= 0;
+	int 					m_OptionAfficherCarte;
 	String					m_NomTransportService;
 	String					m_NoArret;
 	String					m_NomIntersection;
@@ -430,8 +431,15 @@ public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListen
 		m_OptionAjoutFavoris = MenuCreator.populateMenu(menu, this.getBaseContext()) + 1;
 		MenuItem item = menu.add(Menu.NONE, m_OptionAjoutFavoris, Menu.NONE, this.getString(R.string.menu_option_ajouter_favoris));
 		item.setAlphabeticShortcut('a');
-		item.setIcon(android.R.drawable.ic_menu_add);
-		return super.onCreateOptionsMenu(menu);
+		item.setIcon(R.drawable.ic_action_ajout_favoris);
+		
+		m_OptionAfficherCarte = m_OptionAjoutFavoris + 1;
+		MenuItem optionAfficherCarte = menu.add(Menu.NONE, m_OptionAfficherCarte, Menu.NONE, this.getString(R.string.menu_option_afficher_arret_carte));
+		optionAfficherCarte.setAlphabeticShortcut('m');
+		optionAfficherCarte.setIcon(R.drawable.ic_menu_location);
+		
+		
+		return true;//super.onCreateOptionsMenu(menu);
 	}
 
 	/** when menu button option selected */
@@ -459,7 +467,12 @@ public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListen
 			});
 			alertDialog.setCanceledOnTouchOutside(true);
 			alertDialog.show();
-		} else
+		} 
+		else if(nItemId == m_OptionAfficherCarte)
+		{
+			
+		}
+		else
 		{
 			MenuCreator.startActivityFromMenu(item, this);
 		}
