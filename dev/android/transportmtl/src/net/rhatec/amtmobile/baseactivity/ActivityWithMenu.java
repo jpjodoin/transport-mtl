@@ -7,7 +7,6 @@ import com.actionbarsherlock.view.MenuItem;
 
 import net.rhatec.amtmobile.helpers.MenuCreator;
 import android.os.Bundle;
-import com.actionbarsherlock.view.Window;
 
 
 public class ActivityWithMenu extends SherlockActivity

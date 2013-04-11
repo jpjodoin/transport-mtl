@@ -112,7 +112,6 @@ public class ListeSocieteManager
 				File ancienListeTransport = new File(TransportProvider.getRootPath(c) + "listetransport.dba");
 				File nouveauListeTransport = new File(TransportProvider.getRootPath(c) + "listetransportTemp.dba");
 				nouveauListeTransport.renameTo(ancienListeTransport);
-				System.out.println("Transport Society Successfully added !");
 			}
 
 		} catch (IOException e)
@@ -150,7 +149,6 @@ public class ListeSocieteManager
 				File ancienListeTransport = new File(TransportProvider.getRootPath(c) + "listetransport.dba");
 				File nouveauListeTransport = new File(TransportProvider.getRootPath(c) + "listetransportTemp.dba");
 				nouveauListeTransport.renameTo(ancienListeTransport);
-				System.out.println("Transport Society Successfully delete !");
 			}
 
 		} catch (IOException e)

@@ -70,7 +70,6 @@ public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListen
 	ArrayList<Temps>		vTemps;
 	Calendar unCalendrier = Calendar.getInstance();
 	//boolean m_isAffichageRTL;
-	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -470,7 +469,8 @@ public class HoraireDlg extends ActivityWithMenu implements OnItemSelectedListen
 		} 
 		else if(nItemId == m_OptionAfficherCarte)
 		{
-			
+			Intent mapActivity = new Intent(this, MapsDlg.class);
+			startActivity(mapActivity);
 		}
 		else
 		{

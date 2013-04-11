@@ -4,12 +4,10 @@ import com.actionbarsherlock.R;
 import com.actionbarsherlock.app.SherlockListActivity;
 
 import net.rhatec.amtmobile.helpers.MenuCreator;
-import android.app.ListActivity;
 import android.os.Bundle;
 
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Window;
 
 public class ListActivityWithMenu extends SherlockListActivity
 {
