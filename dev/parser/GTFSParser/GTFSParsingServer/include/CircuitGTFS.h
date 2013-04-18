@@ -3,13 +3,14 @@
 #include <string>
 #include <vector>
 #include "ArretGTFS.h"
-
+#include <map>
 class CircuitGTFS: public Circuit
 {
 public:
 	CircuitGTFS(std::string strNom, unsigned int nNumero, eDirection Direction, std::string strExtraInfoDirection = "null", std::string strExtraInfoCircuit = "null");
 	virtual ~CircuitGTFS();
 	std::vector<std::string> m_tripsList;
+	std::map<std::string, int> m_TripHeadSignNbReference;
 	void sortStopList()
 	{
 		std::sort(m_vArret.begin(), m_vArret.end(), AscendingArretGTFSSort());

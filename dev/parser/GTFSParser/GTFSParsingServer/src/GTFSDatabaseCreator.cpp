@@ -76,7 +76,7 @@ void GTFSDatabaseCreator::GetData()
 
 	m_parsingState = LISTEHORAIRE;
 	ReadFile("stop_times.txt");
-	//TODO: Sort schedule
+	
 
 	std::vector<Circuit*>* vCircuit = m_TransportService->ObtenirVecteurCircuit();
 	LOGINFO("Sorting schedule");
@@ -85,6 +85,21 @@ void GTFSDatabaseCreator::GetData()
 	{
 		std::cout << i++ << std::endl;
 		Circuit* circuitCourant = (*circuitIt);
+
+		CircuitGTFS* circuitGTFS = dynamic_cast<CircuitGTFS*>(circuitCourant);
+		if(circuitGTFS)
+		{
+			std::string direction = "";
+			int nbOccurence = 0;
+			for(auto it = circuitGTFS->m_TripHeadSignNbReference.begin(); it != circuitGTFS->m_TripHeadSignNbReference.end(); ++it)
+			{
+				if((*it).second > nbOccurence)
+					direction = it->first;
+			}
+			circuitGTFS->ChangerExtraInfoDirection(direction);
+		}
+
+
 		std::vector<Arret*>* vArret = circuitCourant->ObtenirVecteurArret();
 		std::string nomDernierArret;
 		for (std::vector<Arret*>::iterator arretIt = vArret->begin(); arretIt != vArret->end(); ++arretIt)
@@ -523,7 +538,11 @@ void GTFSDatabaseCreator::ParseStops(const std::string& strBuf)
 
 std::string GTFSDatabaseCreator::createKey(Routes* r, Trips* t)
 {
-	return r->route_short_name+t->direction_id+r->route_long_name+t->trip_headsign;
+	std::string direction = t->direction_id;
+	if(direction.empty())
+		direction = t->trip_headsign;
+	
+	return r->route_id+direction;// "r->route_short_name+direction+r->route_long_name"
 }
 
 bool sortStopTimeSequence (const StopTime &lhs, const StopTime &rhs){
@@ -574,6 +593,7 @@ void GTFSDatabaseCreator::ParseStopTimes(const std::string& strBuf)
 			{
 				c = (CircuitGTFS*) (*circuitIt).second;
 			}
+			++c->m_TripHeadSignNbReference[t->trip_headsign];
 			c->m_tripsList.push_back(t->trip_id);
 		}
 

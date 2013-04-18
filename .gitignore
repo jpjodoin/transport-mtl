@@ -2,6 +2,11 @@
 /dev/parser/GTFSParser/3rd/curl/
 /dev/parser/GTFSParser/3rd/vld/
 /dev/parser/GTFSParser/ipch/
+/dev/parser/GTFSParser/gtfs_archive/
+/dev/parser/GTFSParser/transportdb/
+/dev/parser/Script/*.pyc
+/dev/parser/Script/gtfs_archive/
+/dev/parser/Script/transportdb/
 /dev/android/transportmtl/gen/
 /dev/android/AmbilWarna/gen/
 *.sdf
